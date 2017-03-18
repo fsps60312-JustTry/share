@@ -1,21 +1,20 @@
 ﻿<Properties StartupConfiguration="{5F12D0BB-FD11-455D-9529-947D5F336831}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="share/App.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="share/SignUp.xaml.cs">
     <Files>
-      <File FileName="share/LogIn.xaml.cs" Line="56" Column="29" />
-      <File FileName="share/SignUp.xaml.cs" Line="39" Column="79" />
-      <File FileName="iOS/Main.cs" Line="17" Column="1" />
-      <File FileName="share/App.xaml.cs" Line="11" Column="24" />
+      <File FileName="share/LogIn.xaml.cs" Line="60" Column="4" />
+      <File FileName="share/SignUp.xaml.cs" Line="93" Column="30" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="share" expanded="True">
             <Node name="share" expanded="True">
-              <Node name="App.xaml" expanded="True">
-                <Node name="App.xaml.cs" selected="True" />
-              </Node>
+              <Node name="App.xaml" expanded="True" />
+              <Node name="IDVerification.xaml" expanded="True" />
               <Node name="LogIn.xaml" expanded="True" />
-              <Node name="SignUp.xaml" expanded="True" />
+              <Node name="SignUp.xaml" expanded="True">
+                <Node name="SignUp.xaml.cs" selected="True" />
+              </Node>
             </Node>
             <Node name="share.Droid" expanded="True">
               <Node name="Resources" expanded="True">

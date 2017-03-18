@@ -13,3 +13,4 @@
 /Users/mac/Desktop/share/iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Xaml.dll
 /Users/mac/Desktop/share/iOS/bin/iPhoneSimulator/Debug/share.dll
 /Users/mac/Desktop/share/iOS/bin/iPhoneSimulator/Debug/share.dll.mdb
+/Users/mac/Desktop/share/iOS/obj/iPhoneSimulator/Debug/optimized/addUser.png

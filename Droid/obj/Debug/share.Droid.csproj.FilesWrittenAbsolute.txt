@@ -32,3 +32,4 @@
 /Users/mac/Desktop/share/Droid/bin/Debug/share.dll.mdb
 /Users/mac/Desktop/share/Droid/obj/Debug/res/drawable/top.jpg
 /Users/mac/Desktop/share/Droid/obj/Debug/res/drawable/sharestar.jpg
+/Users/mac/Desktop/share/Droid/obj/Debug/res/drawable/adduser.png

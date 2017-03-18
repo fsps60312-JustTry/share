@@ -14,3 +14,5 @@
 /Users/mac/Desktop/share/share/obj/Debug/share.LogIn.xaml.g.cs
 /Users/mac/Desktop/share/share/obj/Debug/share.SignUp.xaml
 /Users/mac/Desktop/share/share/obj/Debug/share.SignUp.xaml.g.cs
+/Users/mac/Desktop/share/share/obj/Debug/share.IDVerification.xaml
+/Users/mac/Desktop/share/share/obj/Debug/share.IDVerification.xaml.g.cs
