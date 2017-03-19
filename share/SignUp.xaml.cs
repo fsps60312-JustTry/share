@@ -7,7 +7,7 @@ namespace share
 {
 	public partial class SignUp : ContentPage
 	{
-
+		//bigGrid 就是整個頁面的Grid
 		private Grid gridDetail,bigGrid;
 		private Button imageBt;
 

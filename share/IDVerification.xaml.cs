@@ -71,10 +71,13 @@ namespace share
 				}
 
 
+
+				// 照理說要放ＰrogressBar，暫時用這個idButton替代
 				var idButton = new Button
 				{
 					Text = "c9 c9 c9 "
 				};
+
 
 				Button nexStep = new Button
 				{

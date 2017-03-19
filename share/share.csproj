@@ -42,6 +42,12 @@
     <EmbeddedResource Include="DriverVerification.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConfirmVerification.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Map.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -62,6 +68,12 @@
     </Compile>
     <Compile Include="DriverVerification.xaml.cs">
       <DependentUpon>DriverVerification.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirmVerification.xaml.cs">
+      <DependentUpon>ConfirmVerification.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Map.xaml.cs">
+      <DependentUpon>Map.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
