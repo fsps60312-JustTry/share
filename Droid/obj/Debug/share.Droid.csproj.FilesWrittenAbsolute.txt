@@ -33,3 +33,4 @@
 /Users/mac/Desktop/share/Droid/obj/Debug/res/drawable/top.jpg
 /Users/mac/Desktop/share/Droid/obj/Debug/res/drawable/sharestar.jpg
 /Users/mac/Desktop/share/Droid/obj/Debug/res/drawable/adduser.png
+/Users/mac/Desktop/share/Droid/obj/Debug/res/drawable/camera.png

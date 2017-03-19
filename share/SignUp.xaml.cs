@@ -56,7 +56,6 @@ namespace share
 				gridDetail.Children.Add(gender, 0, 1);
 				gridDetail.Children.Add(phone, 0, 2);
 
-
 				gridDetail.Children.Add(new Entry(), 1, 0);
 				gridDetail.Children.Add(new Entry(), 1, 1);
 				gridDetail.Children.Add(new Entry(), 1, 2);

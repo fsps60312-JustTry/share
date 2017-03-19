@@ -1,8 +1,10 @@
-﻿<Properties StartupConfiguration="{5F12D0BB-FD11-455D-9529-947D5F336831}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="share/SignUp.xaml.cs">
+﻿<Properties StartupConfiguration="{BB64B759-DA2D-4DF7-AFEE-8F665A6718B1}|Default">
+  <MonoDevelop.Ide.Workbench>
     <Files>
       <File FileName="share/LogIn.xaml.cs" Line="60" Column="4" />
-      <File FileName="share/SignUp.xaml.cs" Line="93" Column="30" />
+      <File FileName="share/SignUp.xaml.cs" Line="91" Column="4" />
+      <File FileName="share/IDVerification.xaml.cs" Line="30" Column="81" />
+      <File FileName="share/DriverVerification.xaml.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -10,11 +12,13 @@
           <Node name="share" expanded="True">
             <Node name="share" expanded="True">
               <Node name="App.xaml" expanded="True" />
+              <Node name="DriverVerification.xaml" expanded="True">
+                <Node name="DriverVerification.xaml.cs" selected="True" />
+              </Node>
               <Node name="IDVerification.xaml" expanded="True" />
               <Node name="LogIn.xaml" expanded="True" />
-              <Node name="SignUp.xaml" expanded="True">
-                <Node name="SignUp.xaml.cs" selected="True" />
-              </Node>
+              <Node name="sharePage.xaml" expanded="True" />
+              <Node name="SignUp.xaml" expanded="True" />
             </Node>
             <Node name="share.Droid" expanded="True">
               <Node name="Resources" expanded="True">

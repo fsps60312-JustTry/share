@@ -16,3 +16,5 @@
 /Users/mac/Desktop/share/share/obj/Debug/share.SignUp.xaml.g.cs
 /Users/mac/Desktop/share/share/obj/Debug/share.IDVerification.xaml
 /Users/mac/Desktop/share/share/obj/Debug/share.IDVerification.xaml.g.cs
+/Users/mac/Desktop/share/share/obj/Debug/share.DriverVerification.xaml
+/Users/mac/Desktop/share/share/obj/Debug/share.DriverVerification.xaml.g.cs
