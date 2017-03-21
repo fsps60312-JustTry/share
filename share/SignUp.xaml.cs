@@ -90,6 +90,8 @@ namespace share
 			var newPage = new IDVerification();
 
 			Navigation.PushAsync(newPage);
+
+			NavigationPage.SetHasBackButton(newPage, false);
 			//PushAsync = 到下一頁，有 Back 按鈕
 			//PushModalAsync =  到下一頁，沒有 Back 按鈕
 		}

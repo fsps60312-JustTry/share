@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="share.Menu">
+	<ContentPage.Content>
+		
+		<StackLayout>
+			<Image Source="addUser.png" WidthRequest="150" HeightRequest="150" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+			<Label Text="Lea" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Font="24" />
+			<Button Clicked="Go_To_Add_A_Car_Page_Button_Clicked" Text="訂單" TextColor="Black" BorderWidth="10" BorderRadius="10" BorderColor="Black" />
+			<Button Clicked="Go_To_History_Button_Clicked" Text="錢包" TextColor="Black" BorderWidth="10" BorderRadius="10" BorderColor="Black" />
+			<Button Text="車輛" TextColor="Black" BorderWidth="10" BorderRadius="10" BorderColor="Black" />
+			<Button Text="客服" TextColor="Black" BorderWidth="10" BorderRadius="10" BorderColor="Black" />
+			<Button Clicked="Switch_To_Customer_Mode_Button_Clicked" Text="切換為租車模式" TextColor="Black" />
+		</StackLayout>
+		
+	</ContentPage.Content>
+</ContentPage>

@@ -15,6 +15,13 @@ namespace share
 			InitializeComponent();
 
 
+
+			ScrollView ScrollContainer = new ScrollView
+			{
+				Orientation = ScrollOrientation.Both,
+			};
+
+
 			//star : fill the remaining place
 			//auto : minimum
 			//absolute : specific
@@ -188,7 +195,11 @@ namespace share
 
 
 
-			this.Content = grid;
+
+
+			ScrollContainer.Content = grid;
+			Content = ScrollContainer;
+
 
 
 		}
@@ -198,7 +209,10 @@ namespace share
 			//進到下一頁
 			var newPage = new ConfirmVerification();
 
-			Navigation.PushModalAsync(newPage);
+			Navigation.PushAsync(newPage);
+
+			NavigationPage.SetHasBackButton(newPage, false);
+
 			//PushAsync = 到下一頁，有 Back 按鈕
 			//PushModalAsync =  到下一頁，沒有 Back 按鈕
 		}

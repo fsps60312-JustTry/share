@@ -1,11 +1,9 @@
 ﻿<Properties StartupConfiguration="{5F12D0BB-FD11-455D-9529-947D5F336831}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="share/DriverVerification.xaml.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="share/LogIn.xaml.cs" Line="43" Column="6" />
-      <File FileName="share/SignUp.xaml.cs" Line="76" Column="45" />
-      <File FileName="share/IDVerification.xaml.cs" Line="75" Column="24" />
-      <File FileName="share/ConfirmVerification.xaml.cs" Line="31" Column="4" />
-      <File FileName="share/DriverVerification.xaml.cs" Line="134" Column="21" />
+      <File FileName="share/CustomerMenu.xaml.cs" Line="21" Column="29" />
+      <File FileName="share/Edit_Page.xaml.cs" Line="54" Column="30" />
+      <File FileName="share/Personal_Page.xaml.cs" Line="54" Column="30" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,12 +12,16 @@
             <Node name="share" expanded="True">
               <Node name="App.xaml" expanded="True" />
               <Node name="ConfirmVerification.xaml" expanded="True" />
-              <Node name="DriverVerification.xaml" expanded="True">
-                <Node name="DriverVerification.xaml.cs" selected="True" />
-              </Node>
+              <Node name="CustomerMenu.xaml" expanded="True" />
+              <Node name="DriverVerification.xaml" expanded="True" />
+              <Node name="Edit_Page.xaml" expanded="True" />
               <Node name="IDVerification.xaml" expanded="True" />
               <Node name="LogIn.xaml" expanded="True" />
               <Node name="Map.xaml" expanded="True" />
+              <Node name="Menu.xaml" expanded="True" />
+              <Node name="Personal_Page.xaml" expanded="True">
+                <Node name="Personal_Page.xaml.cs" selected="True" />
+              </Node>
               <Node name="sharePage.xaml" expanded="True" />
               <Node name="SignUp.xaml" expanded="True" />
             </Node>

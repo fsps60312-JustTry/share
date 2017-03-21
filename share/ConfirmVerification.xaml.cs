@@ -7,7 +7,6 @@ namespace share
 {
 	public partial class ConfirmVerification : ContentPage
 	{
-		private Grid bigGrid;
 
 		public ConfirmVerification()
 		{
@@ -125,6 +124,12 @@ namespace share
 			// Congrats!
 			grid.Children.Add(new Label
 			{
+				Text = "恭喜您完成身份驗證",
+				FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
+				FontAttributes = FontAttributes.Bold,
+				TextColor = Color.FromHex("#FF8A4A"),
+				VerticalOptions = LayoutOptions.Center,
+				HorizontalOptions = LayoutOptions.Center,
 
 			}, 0, 3, 2, 3);
 
@@ -173,6 +178,9 @@ namespace share
 			var newPage = new Map();
 
 			Navigation.PushModalAsync(newPage);
+
+			//NavigationPage.SetHasBackButton(newPage, false);
+
 			//PushAsync = 到下一頁，有 Back 按鈕
 			//PushModalAsync =  到下一頁，沒有 Back 按鈕
 		}

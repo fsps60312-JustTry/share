@@ -22,3 +22,9 @@
 /Users/mac/Desktop/share/share/obj/Debug/share.ConfirmVerification.xaml.g.cs
 /Users/mac/Desktop/share/share/obj/Debug/share.Map.xaml
 /Users/mac/Desktop/share/share/obj/Debug/share.Map.xaml.g.cs
+/Users/mac/Desktop/share/share/obj/Debug/share.Menu.xaml
+/Users/mac/Desktop/share/share/obj/Debug/share.Menu.xaml.g.cs
+/Users/mac/Desktop/share/share/obj/Debug/share.CustomerMenu.xaml
+/Users/mac/Desktop/share/share/obj/Debug/share.CustomerMenu.xaml.g.cs
+/Users/mac/Desktop/share/share/obj/Debug/share.Edit_Page.xaml
+/Users/mac/Desktop/share/share/obj/Debug/share.Edit_Page.xaml.g.cs

@@ -8,7 +8,7 @@ namespace share
 		{
 			InitializeComponent();
 
-			MainPage = new NavigationPage(new LogIn());
+			MainPage = new NavigationPage(new CustomerMenu());
 		}
 
 		protected override void OnStart()

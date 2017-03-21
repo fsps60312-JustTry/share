@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="share.CustomerMenu">
+	<ContentPage.Content>
+		<StackLayout>
+			<Button Clicked="Photo_Button_Clicked" Image="addUser.png" WidthRequest="150" HeightRequest="150" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+				
+			<Label Text="Evelyn Yu" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Font="24" />
+			<Button Clicked="Go_To_History_Button_Clicked" Text="訂單" TextColor="Black" BorderWidth="10" BorderRadius="10" BorderColor="Black" />
+			<Button Text="錢包" TextColor="Black" BorderWidth="10" BorderRadius="10" BorderColor="Black" />
+			<Button Text="收藏" TextColor="Black" BorderWidth="10" BorderRadius="10" BorderColor="Black" />
+			<Button Text="客服" TextColor="Black" BorderWidth="10" BorderRadius="10" BorderColor="Black" />
+			<Button Clicked="Switch_To_Car_Owner_Mode_Button_Clicked" Text="切換為車主模式" TextColor="Black" />
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

@@ -34,3 +34,7 @@
 /Users/mac/Desktop/share/Droid/obj/Debug/res/drawable/sharestar.jpg
 /Users/mac/Desktop/share/Droid/obj/Debug/res/drawable/adduser.png
 /Users/mac/Desktop/share/Droid/obj/Debug/res/drawable/camera.png
+/Users/mac/Desktop/share/Droid/obj/Debug/res/drawable/cameradrb.png
+/Users/mac/Desktop/share/Droid/obj/Debug/res/drawable/cameradrf.png
+/Users/mac/Desktop/share/Droid/obj/Debug/res/drawable/cameraidb.png
+/Users/mac/Desktop/share/Droid/obj/Debug/res/drawable/cameraidf.png

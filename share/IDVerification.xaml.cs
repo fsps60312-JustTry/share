@@ -7,9 +7,7 @@ namespace share
 {
 	public partial class IDVerification : ContentPage
 	{
-		private Grid bigGrid, idFront, idBack;
-		private Button idPicF, idPicB;
-
+		
 		public IDVerification()
 		{
 			InitializeComponent();
@@ -198,7 +196,10 @@ namespace share
 			//進到下一頁
 			var newPage = new DriverVerification();
 
-			Navigation.PushModalAsync(newPage);
+			Navigation.PushAsync(newPage);
+
+			NavigationPage.SetHasBackButton(newPage, false);
+
 			//PushAsync = 到下一頁，有 Back 按鈕
 			//PushModalAsync =  到下一頁，沒有 Back 按鈕
 		}
