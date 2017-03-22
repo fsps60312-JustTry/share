@@ -28,3 +28,5 @@
 /Users/mac/Desktop/share/share/obj/Debug/share.CustomerMenu.xaml.g.cs
 /Users/mac/Desktop/share/share/obj/Debug/share.Edit_Page.xaml
 /Users/mac/Desktop/share/share/obj/Debug/share.Edit_Page.xaml.g.cs
+/Users/mac/Desktop/share/share/obj/Debug/share.Personal_Page.xaml
+/Users/mac/Desktop/share/share/obj/Debug/share.Personal_Page.xaml.g.cs

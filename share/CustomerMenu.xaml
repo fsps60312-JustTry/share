@@ -10,6 +10,7 @@
 			<Button Text="收藏" TextColor="Black" BorderWidth="10" BorderRadius="10" BorderColor="Black" />
 			<Button Text="客服" TextColor="Black" BorderWidth="10" BorderRadius="10" BorderColor="Black" />
 			<Button Clicked="Switch_To_Car_Owner_Mode_Button_Clicked" Text="切換為車主模式" TextColor="Black" />
+
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

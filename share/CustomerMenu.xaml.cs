@@ -7,15 +7,21 @@ namespace share
 {
 	public partial class CustomerMenu : ContentPage
 	{
+
+
 		public CustomerMenu()
 		{
+			
+			NavigationPage.SetBackButtonTitle(this, "");
+
+
 			InitializeComponent();
 		}
 
 		void Photo_Button_Clicked(object sender, System.EventArgs e)
 		{
 			//進到下一頁
-			var newPage = new Edit_Page();
+			var newPage = new Personal_Page();
 			Navigation.PushAsync(newPage);
 			//PushAsync = 到下一頁，有 Back 按鈕
 			//PushModalAsync =  到下一頁，沒有 Back 按鈕

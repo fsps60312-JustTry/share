@@ -39,6 +39,7 @@ namespace share
 				{
 					new ColumnDefinition { Width = GridLength.Star },
 					new ColumnDefinition { Width = new GridLength(150, GridUnitType.Absolute) },
+					new ColumnDefinition { Width = new GridLength(150, GridUnitType.Absolute) },
 					new ColumnDefinition { Width = GridLength.Star },
 				},
 
