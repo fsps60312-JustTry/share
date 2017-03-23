@@ -38,3 +38,6 @@
 /Users/mac/Desktop/share/Droid/obj/Debug/res/drawable/cameradrf.png
 /Users/mac/Desktop/share/Droid/obj/Debug/res/drawable/cameraidb.png
 /Users/mac/Desktop/share/Droid/obj/Debug/res/drawable/cameraidf.png
+/Users/mac/Desktop/share/Droid/obj/Debug/res/drawable/payway.png
+/Users/mac/Desktop/share/Droid/obj/Debug/res/drawable/cash.png
+/Users/mac/Desktop/share/Droid/obj/Debug/res/drawable/wechat.jpg

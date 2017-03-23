@@ -1,31 +1,24 @@
 ﻿<Properties StartupConfiguration="{5F12D0BB-FD11-455D-9529-947D5F336831}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="share/SignUp.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="share/Add_Vehicle_Page.xaml.cs">
     <Files>
-      <File FileName="share/DriverVerification.xaml.cs" Line="198" Column="4" />
-      <File FileName="share/Personal_Page.xaml.cs" Line="100" Column="4" />
-      <File FileName="share/CustomerMenu.xaml.cs" Line="14" Column="4" />
-      <File FileName="share/Edit_Page.xaml.cs" Line="60" Column="8" />
-      <File FileName="share/SignUp.xaml.cs" Line="41" Column="54" />
+      <File FileName="share/Add_Vehicle_Page.xaml.cs" Line="51" Column="31" />
+      <File FileName="share/DriverVerification.xaml.cs" Line="32" Column="5" />
+      <File FileName="share/Menu_Page.xaml.cs" Line="17" Column="4" />
+      <File FileName="share/Vehicle_Page.xaml.cs" Line="22" Column="6" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="share" expanded="True">
             <Node name="share" expanded="True">
+              <Node name="Add_Vehicle_Page.xaml" expanded="True">
+                <Node name="Add_Vehicle_Page.xaml.cs" selected="True" />
+              </Node>
               <Node name="App.xaml" expanded="True" />
-              <Node name="ConfirmVerification.xaml" expanded="True" />
-              <Node name="CustomerMenu.xaml" expanded="True" />
               <Node name="DriverVerification.xaml" expanded="True" />
               <Node name="Edit_Page.xaml" expanded="True" />
-              <Node name="IDVerification.xaml" expanded="True" />
-              <Node name="LogIn.xaml" expanded="True" />
-              <Node name="Map.xaml" expanded="True" />
-              <Node name="Menu.xaml" expanded="True" />
-              <Node name="Personal_Page.xaml" expanded="True" />
-              <Node name="sharePage.xaml" expanded="True" />
-              <Node name="SignUp.xaml" expanded="True">
-                <Node name="SignUp.xaml.cs" selected="True" />
-              </Node>
+              <Node name="Menu_Page.xaml" expanded="True" />
+              <Node name="Vehicle_Page.xaml" expanded="True" />
             </Node>
             <Node name="share.Droid" expanded="True">
               <Node name="Resources" expanded="True">
@@ -48,7 +41,9 @@
   <MonoDevelop.Ide.ItemProperties.share.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.92D2E570-63DD-4AA0-B18E-3C29E752DEA8" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/mac/Desktop/share/iOS/StandardViewCellRenderer.cs" relfile="iOS/StandardViewCellRenderer.cs" line="10" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />

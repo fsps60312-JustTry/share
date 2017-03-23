@@ -135,6 +135,10 @@
     <BundleResource Include="Resources\cameraDrB.png" />
     <BundleResource Include="Resources\cameraIDB.png" />
     <BundleResource Include="Resources\cameraIDF.png" />
+    <BundleResource Include="Resources\payWay.png" />
+    <BundleResource Include="Resources\cash.png" />
+    <BundleResource Include="Resources\wechat.jpg" />
+    <BundleResource Include="Resources\scooter.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

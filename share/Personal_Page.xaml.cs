@@ -8,7 +8,6 @@ namespace share
 	public partial class Personal_Page : ContentPage
 	{
 
-		private Grid gridName;
 
 		public Personal_Page()
 		{
@@ -53,8 +52,8 @@ namespace share
 				ColumnDefinitions =
 				{
 					new ColumnDefinition { Width = new GridLength(50, GridUnitType.Star) },                   
-					new ColumnDefinition { Width = new GridLength(100, GridUnitType.Absolute) },
-					new ColumnDefinition { Width = new GridLength(100, GridUnitType.Absolute) },
+					new ColumnDefinition { Width = new GridLength(125, GridUnitType.Absolute) },
+					new ColumnDefinition { Width = new GridLength(125, GridUnitType.Absolute) },
 					new ColumnDefinition { Width = new GridLength(50, GridUnitType.Star) },
 
 
@@ -117,7 +116,7 @@ namespace share
 
 			grid.Children.Add(new Label
 			{
-				Text = "穆霓凰", //firebase
+				Text = "住海邊", //firebase
 				FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label)),
 				FontAttributes = FontAttributes.None,
 				TextColor = Color.Gray,
@@ -161,7 +160,7 @@ namespace share
 
 			grid.Children.Add(new Button
 			{
-				Text = "一般會員＞", //firebase
+				Text = "一般會員", //firebase
 				FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label)),
 				TextColor = Color.Gray,
 				VerticalOptions = LayoutOptions.Center,
@@ -184,7 +183,7 @@ namespace share
 
 			grid.Children.Add(new Button
 			{
-				Text = "已完成認證＞",
+				Text = "已完成認證",
 				FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label)),
 				TextColor = Color.Gray,
 				VerticalOptions = LayoutOptions.Center,

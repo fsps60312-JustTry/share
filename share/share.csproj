@@ -48,16 +48,40 @@
     <EmbeddedResource Include="Map.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu.xaml">
+    <EmbeddedResource Include="Menu_Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomerMenu.xaml">
+    <EmbeddedResource Include="Customer_Menu_Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Edit_Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Personal_Page.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My_Purse_Page.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment_Page.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setting_Page.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Account_Page.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common_Address_Page.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Emergency_Page.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vehicle_Page.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add_Vehicle_Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -87,17 +111,41 @@
     <Compile Include="Map.xaml.cs">
       <DependentUpon>Map.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Menu.xaml.cs">
-      <DependentUpon>Menu.xaml</DependentUpon>
+    <Compile Include="Menu_Page.xaml.cs">
+      <DependentUpon>Menu_Page.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CustomerMenu.xaml.cs">
-      <DependentUpon>CustomerMenu.xaml</DependentUpon>
+    <Compile Include="Customer_Menu_Page.xaml.cs">
+      <DependentUpon>Customer_Menu_Page.xaml</DependentUpon>
     </Compile>
     <Compile Include="Edit_Page.xaml.cs">
       <DependentUpon>Edit_Page.xaml</DependentUpon>
     </Compile>
     <Compile Include="Personal_Page.xaml.cs">
       <DependentUpon>Personal_Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="My_Purse_Page.xaml.cs">
+      <DependentUpon>My_Purse_Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Payment_Page.xaml.cs">
+      <DependentUpon>Payment_Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Setting_Page.xaml.cs">
+      <DependentUpon>Setting_Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Account_Page.xaml.cs">
+      <DependentUpon>Account_Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common_Address_Page.xaml.cs">
+      <DependentUpon>Common_Address_Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Emergency_Page.xaml.cs">
+      <DependentUpon>Emergency_Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vehicle_Page.xaml.cs">
+      <DependentUpon>Vehicle_Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Add_Vehicle_Page.xaml.cs">
+      <DependentUpon>Add_Vehicle_Page.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
