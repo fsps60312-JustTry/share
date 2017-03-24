@@ -84,6 +84,9 @@
     <EmbeddedResource Include="Add_Vehicle_Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="My_Vehicle_Page.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -146,6 +149,9 @@
     </Compile>
     <Compile Include="Add_Vehicle_Page.xaml.cs">
       <DependentUpon>Add_Vehicle_Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="My_Vehicle_Page.xaml.cs">
+      <DependentUpon>My_Vehicle_Page.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

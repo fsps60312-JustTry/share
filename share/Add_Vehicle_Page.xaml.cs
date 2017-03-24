@@ -7,6 +7,28 @@ namespace share
 {
 	public partial class Add_Vehicle_Page : ContentPage
 	{
+		Dictionary<string, String> oilToName = new Dictionary<string, String>
+		{
+			{ "92", "92" },
+			{ "95", "95" },
+			{ "98", "98" },
+			{ "柴油", "柴油" },
+
+		};
+
+		Dictionary<string, String> ageToName = new Dictionary<string, String>
+		{
+			{ "5年以下", "5年以下" },
+			{ "5-10年間", "5-10年間" },
+			{ "10年以上", "10年以上" },
+		};
+
+		Dictionary<string, String> typeToName = new Dictionary<string, String>
+		{
+			{ "擋車", "擋車" },
+			{ "塑膠車", "塑膠車" },
+		};
+
 
 		public Add_Vehicle_Page()
 		{
@@ -32,7 +54,7 @@ namespace share
 
 			ScrollView ScrollContainer = new ScrollView
 			{
-				Orientation = ScrollOrientation.Vertical,
+				Orientation = ScrollOrientation.Both,
 			};
 
 
@@ -41,7 +63,8 @@ namespace share
 				VerticalOptions = LayoutOptions.FillAndExpand,
 				HorizontalOptions = LayoutOptions.FillAndExpand,
 
-				RowSpacing = 1,
+
+				RowSpacing = 4,
 				ColumnSpacing = 1,
 				BackgroundColor = Color.White,
 
@@ -49,7 +72,7 @@ namespace share
 				{
 					new ColumnDefinition{ Width = GridLength.Star},
 					new ColumnDefinition { Width = new GridLength(100, GridUnitType.Absolute) },
-					new ColumnDefinition { Width = new GridLength(100, GridUnitType.Absolute) },
+					new ColumnDefinition { Width = new GridLength(150, GridUnitType.Absolute) },
 					new ColumnDefinition{ Width = GridLength.Star},
 
 					//new ColumnDefinition{ Width = GridLength.Star},
@@ -61,8 +84,12 @@ namespace share
 				{
 					new RowDefinition { Height = GridLength.Auto },
 					new RowDefinition{ Height = new GridLength(150, GridUnitType.Absolute)},
-					new RowDefinition{ Height = new GridLength(30, GridUnitType.Absolute)},
-					new RowDefinition{ Height = new GridLength(30, GridUnitType.Absolute)},
+					new RowDefinition{ Height = new GridLength(40, GridUnitType.Absolute)},
+					new RowDefinition{ Height = new GridLength(40, GridUnitType.Absolute)},
+					new RowDefinition{ Height = new GridLength(40, GridUnitType.Absolute)},
+					new RowDefinition{ Height = new GridLength(40, GridUnitType.Absolute)},
+					new RowDefinition{ Height = new GridLength(40, GridUnitType.Absolute)},
+					new RowDefinition{ Height = new GridLength(40, GridUnitType.Absolute)},
 
 					//new RowDefinition{ Height = new GridLength(30, GridUnitType.Absolute)},
 				},
@@ -71,33 +98,99 @@ namespace share
 
 			};
 
-			Label gasLabel = new Label
-			{
-				Text = "請選擇加油種類",
-				TextColor=Color.Gray,
-				FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label)),
 
-			};
 
 			Picker oilPicker = new Picker
 			{
-				Title="加油種類",
+				Title="加什麼油",
 				VerticalOptions = LayoutOptions.CenterAndExpand,
-				WidthRequest=100,
+				HorizontalOptions = LayoutOptions.Center,
+				WidthRequest=150,
+				TextColor=Color.Gray,
+
+
 
 			};
 			oilPicker.SelectedIndexChanged+=(sender, args) =>
 				{
 					if (oilPicker.SelectedIndex == -1)
 					{
-					gasLabel.Text= "請選擇加油種類";
+					oilPicker.Title= "加什麼油";
 					}
 
 					else
 					{
-					string colorName = oilPicker.Items[oilPicker.SelectedIndex];
+					oilPicker.Title = oilPicker.Items[oilPicker.SelectedIndex];
 					}
 				};
+
+			foreach (string colorName in oilToName.Keys)
+			{
+				oilPicker.Items.Add(colorName);
+			}
+
+
+
+			Picker agePicker = new Picker
+			{
+				Title = "何種車子",
+				VerticalOptions = LayoutOptions.CenterAndExpand,
+				HorizontalOptions = LayoutOptions.Center,
+				WidthRequest = 150,
+				TextColor = Color.Gray,
+
+
+
+			};
+			agePicker.SelectedIndexChanged += (sender, args) =>
+				  {
+					  if (agePicker.SelectedIndex == -1)
+					  {
+						  agePicker.Title = "加油種類";
+					  }
+
+					  else
+					  {
+						  agePicker.Title = oilPicker.Items[agePicker.SelectedIndex];
+					  }
+				  };
+
+			foreach (string colorName in ageToName.Keys)
+			{
+				agePicker.Items.Add(colorName);
+			}
+
+
+			Picker typePicker = new Picker
+			{
+				Title = "愛車種類",
+				VerticalOptions = LayoutOptions.CenterAndExpand,
+				HorizontalOptions = LayoutOptions.Center,
+				WidthRequest = 150,
+				TextColor = Color.Gray,
+
+
+
+			};
+			typePicker.SelectedIndexChanged += (sender, args) =>
+				  {
+					  if (typePicker.SelectedIndex == -1)
+					  {
+						  typePicker.Title = "加油種類";
+					  }
+
+					  else
+					  {
+						  typePicker.Title = oilPicker.Items[typePicker.SelectedIndex];
+					  }
+				  };
+
+			foreach (string colorName in typeToName.Keys)
+			{
+				typePicker.Items.Add(colorName);
+			}
+
+
 
 			grid.Children.Add(new Button
 			{
@@ -135,11 +228,12 @@ namespace share
 			grid.Children.Add(new Entry
 			{
 				Placeholder = "如：137-JAK",
-				FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label)),
-				WidthRequest = 100,
+				FontSize = Device.GetNamedSize(NamedSize.Default, typeof(Label)),
+				WidthRequest = 150,
 				FontAttributes = FontAttributes.None,
 				HorizontalOptions = LayoutOptions.Start,
 				VerticalOptions = LayoutOptions.Center,
+				TextColor=Color.Gray,
 
 
 			}, 2, 2);
@@ -148,7 +242,7 @@ namespace share
 
 			grid.Children.Add(new Label
 			{
-				Text = "車牌",
+				Text = "油種",
 				TextColor = Color.Accent,
 				FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)),
 				FontAttributes = FontAttributes.Bold,
@@ -160,36 +254,54 @@ namespace share
 
 
 
-			//grid.Children.Add(new Label
-			//{
-			//	Text = "車牌",
-			//	TextColor = Color.Accent,
-			//	FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)),
-			//	FontAttributes = FontAttributes.Bold,
-			//	HorizontalOptions = LayoutOptions.Start,
-			//	VerticalOptions = LayoutOptions.Center,
+			grid.Children.Add(new Label
+			{
+				Text = "車齡",
+				TextColor = Color.Accent,
+				FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)),
+				FontAttributes = FontAttributes.Bold,
+				HorizontalOptions = LayoutOptions.Center,
+				VerticalOptions = LayoutOptions.Center,
 
-			//}, 1, 1);
-			//grid.Children.Add(new Entry
-			//{
-			//	Text = "新增",
-			//	TextColor = Color.Black,
-			//	FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label)),
-			//	FontAttributes = FontAttributes.None,
-			//	HorizontalOptions = LayoutOptions.Center,
-			//	VerticalOptions = LayoutOptions.Center,
+			}, 1, 4);
+			grid.Children.Add(agePicker, 2, 4);
 
 
-			//}, 2, 1);
+			grid.Children.Add(new Label
+			{
+				Text = "車種",
+				TextColor = Color.Accent,
+				FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)),
+				FontAttributes = FontAttributes.Bold,
+				HorizontalOptions = LayoutOptions.Center,
+				VerticalOptions = LayoutOptions.Center,
+
+			}, 1, 5);
+			grid.Children.Add(typePicker, 2, 5);
 
 
-			//grid.Children.Add(new Entry
-			//{
-			//	Placeholder = ""
-			//	FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label)),
-			//	HorizontalOptions = LayoutOptions.End,
+			grid.Children.Add(new Label
+			{
+				Text = "備註",
+				TextColor = Color.Accent,
+				FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)),
+				FontAttributes = FontAttributes.Bold,
+				HorizontalOptions = LayoutOptions.Center,
+				VerticalOptions = LayoutOptions.Center,
 
-			//}, 1, 1);
+			}, 1, 6);
+
+
+			// Entry 要變成兩格怎麼弄！
+			// Entry 要變成兩格怎麼弄！
+			// Entry 要變成兩格怎麼弄！
+
+			grid.Children.Add(new Entry
+			{
+				Placeholder="車子注意事項",
+				TextColor = Color.Gray,
+			}, 2, 3, 6, 8);
+
 
 
 

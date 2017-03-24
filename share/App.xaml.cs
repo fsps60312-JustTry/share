@@ -8,7 +8,7 @@ namespace share
 		{
 			InitializeComponent();
 
-			MainPage = new NavigationPage(new Add_Vehicle_Page());
+			MainPage = new NavigationPage(new My_Vehicle_Page());
 		}
 
 		protected override void OnStart()

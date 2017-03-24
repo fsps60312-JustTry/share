@@ -54,3 +54,5 @@
 /Users/mac/Desktop/share/share/obj/Debug/share.Add_Vehicle_Page.xaml
 /Users/mac/Desktop/share/share/obj/Debug/share.Vehicle_Page.xaml.g.cs
 /Users/mac/Desktop/share/share/obj/Debug/share.Add_Vehicle_Page.xaml.g.cs
+/Users/mac/Desktop/share/share/obj/Debug/share.My_Vehicle_Page.xaml
+/Users/mac/Desktop/share/share/obj/Debug/share.My_Vehicle_Page.xaml.g.cs

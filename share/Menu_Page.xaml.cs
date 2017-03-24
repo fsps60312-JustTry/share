@@ -54,6 +54,15 @@ namespace share
 			//PushModalAsync =  到下一頁，沒有 Back 按鈕
 		}
 
+		void Collection_Button_Clicked(object sender, System.EventArgs e)
+		{
+			//進到下一頁
+			var newPage = new My_Purse_Page();
+			Navigation.PushAsync(newPage);
+			//PushAsync = 到下一頁，有 Back 按鈕
+			//PushModalAsync =  到下一頁，沒有 Back 按鈕
+		}
+
 		void Service_Button_Clicked(object sender, System.EventArgs e)
 		{
 			//進到下一頁
@@ -62,6 +71,7 @@ namespace share
 			//PushAsync = 到下一頁，有 Back 按鈕
 			//PushModalAsync =  到下一頁，沒有 Back 按鈕
 		}
+
 
 
 		void Setting_Button_Clicked(object sender, System.EventArgs e)
@@ -73,7 +83,6 @@ namespace share
 			//PushModalAsync =  到下一頁，沒有 Back 按鈕
 		}
 
-
 		//void Switch_To_Customer_Mode_Button_Clicked(object sender, System.EventArgs e)
 		//{
 		//	//進到下一頁
@@ -82,7 +91,7 @@ namespace share
 		//	//PushAsync = 到下一頁，有 Back 按鈕
 		//	//PushModalAsync =  到下一頁，沒有 Back 按鈕
 		//}
-
+	
 
 	}
 

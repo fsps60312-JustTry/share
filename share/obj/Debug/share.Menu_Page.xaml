@@ -13,6 +13,7 @@
 			<Button Text="訂單" Clicked="Go_To_History_Button_Clicked" TextColor="Black" BorderWidth="10" BorderRadius="10" BorderColor="Black" />
 			<Button Text="錢包" Clicked="Money_Button_Clicked" TextColor="Black" BorderWidth="10" BorderRadius="10" BorderColor="Black" />
 			<Button Text="車輛" Clicked="Vehicle_Button_Clicked" TextColor="Black" BorderWidth="10" BorderRadius="10" BorderColor="Black" />
+			<Button Text="收藏" Clicked="Collection_Button_Clicked" TextColor="Black" BorderWidth="10" BorderRadius="10" BorderColor="Black" />
 			<Button Text="客服" Clicked="Service_Button_Clicked" TextColor="Black" BorderWidth="10" BorderRadius="10" BorderColor="Black" />
 			<Button Text="設定" Clicked="Setting_Button_Clicked" TextColor="Black" BorderWidth="10" BorderRadius="10" BorderColor="Black" />
 
