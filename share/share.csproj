@@ -78,13 +78,13 @@
     <EmbeddedResource Include="Emergency_Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vehicle_Page.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="Add_Vehicle_Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="My_Vehicle_Page.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="History_Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -144,14 +144,14 @@
     <Compile Include="Emergency_Page.xaml.cs">
       <DependentUpon>Emergency_Page.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vehicle_Page.xaml.cs">
-      <DependentUpon>Vehicle_Page.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Add_Vehicle_Page.xaml.cs">
       <DependentUpon>Add_Vehicle_Page.xaml</DependentUpon>
     </Compile>
     <Compile Include="My_Vehicle_Page.xaml.cs">
       <DependentUpon>My_Vehicle_Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="History_Page.xaml.cs">
+      <DependentUpon>History_Page.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

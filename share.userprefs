@@ -1,9 +1,10 @@
 ﻿<Properties StartupConfiguration="{5F12D0BB-FD11-455D-9529-947D5F336831}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="share/Payment_Page.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="share/My_Vehicle_Page.xaml.cs">
     <Files>
-      <File FileName="share/Add_Vehicle_Page.xaml.cs" Line="311" Column="4" />
-      <File FileName="share/My_Vehicle_Page.xaml.cs" Line="40" Column="35" />
-      <File FileName="share/Payment_Page.xaml.cs" Line="21" Column="6" />
+      <File FileName="share/Add_Vehicle_Page.xaml.cs" Line="17" Column="5" />
+      <File FileName="share/My_Vehicle_Page.xaml.cs" Line="24" Column="4" />
+      <File FileName="share/Payment_Page.xaml.cs" Line="37" Column="75" />
+      <File FileName="share/History_Page.xaml.cs" Line="14" Column="4" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -16,12 +17,14 @@
               <Node name="Customer_Menu_Page.xaml" expanded="True" />
               <Node name="DriverVerification.xaml" expanded="True" />
               <Node name="Edit_Page.xaml" expanded="True" />
+              <Node name="History_Page.xaml" expanded="True" />
               <Node name="Menu_Page.xaml" expanded="True" />
-              <Node name="My_Vehicle_Page.xaml" expanded="True" />
-              <Node name="Payment_Page.xaml" expanded="True">
-                <Node name="Payment_Page.xaml.cs" selected="True" />
+              <Node name="My_Vehicle_Page.xaml" expanded="True">
+                <Node name="My_Vehicle_Page.xaml.cs" selected="True" />
               </Node>
-              <Node name="Vehicle_Page.xaml" expanded="True" />
+              <Node name="Payment_Page.xaml" expanded="True" />
+              <Node name="Personal_Page.xaml" expanded="True" />
+              <Node name="Setting_Page.xaml" expanded="True" />
             </Node>
             <Node name="share.Droid" expanded="True">
               <Node name="Resources" expanded="True">
