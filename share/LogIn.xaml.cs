@@ -10,44 +10,78 @@ namespace share
 
 		public LogIn()
 		{
+
+			// 下一頁 nav 的返回鍵 會變成 ""
+			NavigationPage.SetBackButtonTitle(this, "");
+
 			InitializeComponent();
 
-			Label name = new Label
-			{
-				Text = "享卡",
-				Font = Font.SystemFontOfSize(NamedSize.Large),
-				HorizontalOptions = LayoutOptions.Center
+			//Label name = new Label
+			//{
+			//	Text = "享卡出行",
+			//	FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
+			//	HorizontalOptions = LayoutOptions.Center,
+			//	TextColor= Color.Orange
 
+			//};
+
+			var title_Image = new Image 
+			{ 
+				Source = "sharecar_fb.png",
+				WidthRequest = 150,
+				HeightRequest = 150
 			};
-
-			var title_Image = new Image { Aspect = Aspect.AspectFit };
-			title_Image.Source = "top.jpg";
 
 			Button Facebook_Log_In = new Button
 			{
 				Text = "Log In With Facebook",
-				Font = Font.SystemFontOfSize(NamedSize.Medium),
+				FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label)),
+				TextColor = Color.Blue,
+				WidthRequest = 150,
 				BorderWidth = 2,
+				BorderColor = Color.Blue,
 				HorizontalOptions = LayoutOptions.Center,
-				VerticalOptions = LayoutOptions.CenterAndExpand
+				VerticalOptions = LayoutOptions.CenterAndExpand,
+
 			};
 			Facebook_Log_In.Clicked += Submit_Button_Clicked;
 
 			// Accomodate iPhone status bar.
 			this.Padding = new Thickness(10, Device.OnPlatform(20, 0, 0), 10, 5);
 
-			// Build the page.
-			this.Content = new StackLayout
+
+			StackLayout stackLayout = new StackLayout
 			{
+
+				VerticalOptions = LayoutOptions.FillAndExpand,
+				HorizontalOptions = LayoutOptions.Center,
+
+				BackgroundColor = Color.White,
+
+				Orientation = StackOrientation.Vertical,
+
 				Children =
 				{
-					name,
+					new Label{ Text = ""},
 					title_Image,
+					new Label{ Text = ""},
+
 					Facebook_Log_In
-				}
+					//grid
+
+
+
+
+				},
+
 			};
+			// Build the page.
+			this.Content = stackLayout;
+
 
 		}
+
+
 
 		void Submit_Button_Clicked(object sender, System.EventArgs e)
 		{

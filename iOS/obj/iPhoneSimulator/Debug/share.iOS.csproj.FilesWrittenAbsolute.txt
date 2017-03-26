@@ -22,3 +22,4 @@
 /Users/mac/Desktop/share/iOS/obj/iPhoneSimulator/Debug/optimized/payWay.png
 /Users/mac/Desktop/share/iOS/obj/iPhoneSimulator/Debug/optimized/cash.png
 /Users/mac/Desktop/share/iOS/obj/iPhoneSimulator/Debug/optimized/scooter.png
+/Users/mac/Desktop/share/iOS/obj/iPhoneSimulator/Debug/optimized/sharecar_fb.png

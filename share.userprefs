@@ -1,30 +1,32 @@
 ﻿<Properties StartupConfiguration="{5F12D0BB-FD11-455D-9529-947D5F336831}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="share/My_Vehicle_Page.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="share/Add_Vehicle_Page.xaml.cs">
     <Files>
+      <File FileName="share/SignUp.xaml.cs" Line="52" Column="8" />
       <File FileName="share/Add_Vehicle_Page.xaml.cs" Line="17" Column="5" />
-      <File FileName="share/My_Vehicle_Page.xaml.cs" Line="24" Column="4" />
-      <File FileName="share/Payment_Page.xaml.cs" Line="37" Column="75" />
-      <File FileName="share/History_Page.xaml.cs" Line="14" Column="4" />
+      <File FileName="share/Edit_Page.xaml.cs" Line="31" Column="32" />
+      <File FileName="share/Personal_Page.xaml.cs" Line="164" Column="32" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="share" expanded="True">
             <Node name="share" expanded="True">
-              <Node name="Add_Vehicle_Page.xaml" expanded="True" />
+              <Node name="Add_Vehicle_Page.xaml" expanded="True">
+                <Node name="Add_Vehicle_Page.xaml.cs" selected="True" />
+              </Node>
               <Node name="App.xaml" expanded="True" />
               <Node name="ConfirmVerification.xaml" expanded="True" />
               <Node name="Customer_Menu_Page.xaml" expanded="True" />
               <Node name="DriverVerification.xaml" expanded="True" />
               <Node name="Edit_Page.xaml" expanded="True" />
               <Node name="History_Page.xaml" expanded="True" />
+              <Node name="LogIn.xaml" expanded="True" />
               <Node name="Menu_Page.xaml" expanded="True" />
-              <Node name="My_Vehicle_Page.xaml" expanded="True">
-                <Node name="My_Vehicle_Page.xaml.cs" selected="True" />
-              </Node>
+              <Node name="My_Vehicle_Page.xaml" expanded="True" />
               <Node name="Payment_Page.xaml" expanded="True" />
               <Node name="Personal_Page.xaml" expanded="True" />
               <Node name="Setting_Page.xaml" expanded="True" />
+              <Node name="SignUp.xaml" expanded="True" />
             </Node>
             <Node name="share.Droid" expanded="True">
               <Node name="Resources" expanded="True">
