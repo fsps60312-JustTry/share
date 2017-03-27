@@ -32,6 +32,7 @@ namespace share
 
 				RowSpacing = 5,
 				ColumnSpacing = 5,
+				Margin = 10,
 
 				//column def.
 				ColumnDefinitions =
@@ -95,7 +96,7 @@ namespace share
 				Text = "姓名",
 				TextColor = Color.Accent,
 				FontSize = Device.GetNamedSize(NamedSize.Default, typeof(Label)),
-				FontAttributes = FontAttributes.Bold,
+				FontAttributes = FontAttributes.None,
 				HorizontalOptions = LayoutOptions.Center,
 				VerticalOptions = LayoutOptions.Center,
 
@@ -120,7 +121,7 @@ namespace share
 				Text = "性別",
 				TextColor = Color.Accent,
 				FontSize = Device.GetNamedSize(NamedSize.Default, typeof(Label)),
-				FontAttributes = FontAttributes.Bold,
+				FontAttributes = FontAttributes.None,
 				HorizontalOptions = LayoutOptions.Center,
 				VerticalOptions = LayoutOptions.Center,
 
@@ -183,7 +184,7 @@ namespace share
 				Text = "暱稱",
 				TextColor = Color.Accent,
 				FontSize = Device.GetNamedSize(NamedSize.Default, typeof(Label)),
-				FontAttributes = FontAttributes.Bold,
+				FontAttributes = FontAttributes.None,
 				HorizontalOptions = LayoutOptions.Center,
 				VerticalOptions = LayoutOptions.Center,
 
@@ -206,8 +207,9 @@ namespace share
 			StackLayout stacklayout = new StackLayout
 			{
 				Orientation = StackOrientation.Horizontal,
-				HorizontalOptions = LayoutOptions.CenterAndExpand,
-				WidthRequest = 250,
+				HorizontalOptions = LayoutOptions.Center,
+				//WidthRequest = 250,
+				//Padding = 0,
 
 				Children =
 				{
@@ -217,16 +219,28 @@ namespace share
 						WidthRequest = 20,
 						HeightRequest = 20,
 						HorizontalOptions = LayoutOptions.End,
+						VerticalOptions = LayoutOptions.Center,
+
 					},
 
 
-
+					new Label
+					{
+						Text = "我已閱讀並同意",
+						TextColor = Color.Gray,
+						FontSize = Device.GetNamedSize(NamedSize.Micro, typeof(Label)),
+						VerticalOptions = LayoutOptions.Center,
+						HorizontalOptions = LayoutOptions.End,
+						WidthRequest = 100,
+					},
 					new Button
 					{
-						Text = "我已閱讀並同意《享卡出行服務條款》",
+						Text = "《享卡出行服務條款》",
 						TextColor = Color.Orange,
 						FontSize = Device.GetNamedSize(NamedSize.Micro, typeof(Label)),
-						WidthRequest = 230,
+						VerticalOptions = LayoutOptions.Center,
+						HorizontalOptions = LayoutOptions.Start,
+						WidthRequest = 130,
 					},
 
 

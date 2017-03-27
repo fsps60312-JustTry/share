@@ -41,3 +41,7 @@
 /Users/mac/Desktop/share/Droid/obj/Debug/res/drawable/payway.png
 /Users/mac/Desktop/share/Droid/obj/Debug/res/drawable/cash.png
 /Users/mac/Desktop/share/Droid/obj/Debug/res/drawable/wechat.jpg
+/Users/mac/Desktop/share/Droid/obj/Debug/res/drawable/scooter.png
+/Users/mac/Desktop/share/Droid/obj/Debug/res/drawable/sharecar_fb.png
+/Users/mac/Desktop/share/Droid/obj/Debug/res/drawable/check.png
+/Users/mac/Desktop/share/Droid/obj/Debug/res/drawable/uncheck.png
