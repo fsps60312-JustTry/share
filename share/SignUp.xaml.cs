@@ -7,80 +7,260 @@ namespace share
 {
 	public partial class SignUp : ContentPage
 	{
-		//bigGrid 就是整個頁面的Grid
-		private Grid gridDetail,bigGrid;
-		private Button imageBt;
+		Dictionary<string, String> GenderToName = new Dictionary<string, String>
+		{
+			{ "男", "男" },
+			{ "女", "女" },
+			{ "其他", "其他" },
+
+		};
+
 
 		public SignUp()
 		{
 			InitializeComponent();
 
+			ScrollView ScrollContainer = new ScrollView
 			{
-				bigGrid = new Grid();
-				bigGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(50, GridUnitType.Star) });
+				Orientation = ScrollOrientation.Vertical,
+			};
+			Grid grid = new Grid
+			{
+				// set vertical option
+				VerticalOptions = LayoutOptions.FillAndExpand,
+				HorizontalOptions = LayoutOptions.FillAndExpand,
 
-				bigGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(250, GridUnitType.Absolute) });
-				bigGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(150, GridUnitType.Auto) });
-				bigGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(50, GridUnitType.Star) });
-				bigGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(50, GridUnitType.Star) });
+				RowSpacing = 5,
+				ColumnSpacing = 5,
 
-				imageBt = new Button
+				//column def.
+				ColumnDefinitions =
 				{
-					Image = "addUser.png"
-				};
+					new ColumnDefinition { Width = GridLength.Star},
+					new ColumnDefinition { Width = new GridLength(40, GridUnitType.Absolute) },
+					new ColumnDefinition { Width = new GridLength(160, GridUnitType.Absolute) },
+					new ColumnDefinition { Width = GridLength.Star},
 
+				},
 
+				//row def.
+				RowDefinitions =	
+				{
 
+					new RowDefinition { Height = new GridLength(15, GridUnitType.Absolute) },
+					new RowDefinition { Height = new GridLength(200, GridUnitType.Absolute) },
+					new RowDefinition { Height = new GridLength(25, GridUnitType.Absolute) },
+					new RowDefinition { Height = new GridLength(40, GridUnitType.Absolute) },
+					new RowDefinition { Height = new GridLength(40, GridUnitType.Absolute) },
+					new RowDefinition { Height = new GridLength(40, GridUnitType.Absolute) },
+					new RowDefinition { Height = new GridLength(40, GridUnitType.Absolute) },
+					new RowDefinition { Height = GridLength.Star },
+					new RowDefinition { Height = new GridLength(40, GridUnitType.Absolute) },
+					new RowDefinition { Height = new GridLength(40, GridUnitType.Absolute) },
 
-			}
+				}
 
+			};
 
-
+			//說明
+			grid.Children.Add(new Button
 			{
-				gridDetail = new Grid();
-				gridDetail.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(50, GridUnitType.Auto) });
-				gridDetail.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(200, GridUnitType.Absolute) });
+				Text = "說明",
+				HorizontalOptions = LayoutOptions.Start,
+				VerticalOptions = LayoutOptions.Center,
+				TextColor = Color.Gray,
+				FontSize = Device.GetNamedSize(NamedSize.Micro, typeof(Label)),
 
 
-				gridDetail.RowDefinitions.Add(new RowDefinition { Height = new GridLength(50, GridUnitType.Absolute) });
-				gridDetail.RowDefinitions.Add(new RowDefinition { Height = new GridLength(50, GridUnitType.Absolute) });
-				gridDetail.RowDefinitions.Add(new RowDefinition { Height = new GridLength(50, GridUnitType.Absolute) });
+			}, 3, 0);
 
 
-				var name = new Label { Text = "  姓名  " };
-				var gender = new Label { Text = "  性別  " };
-				var phone = new Label { Text = "  電話  " };
+
+			//圖片
+			grid.Children.Add(new Button
+			{
+				Image = "addUser.png",	
+				WidthRequest = 200,
+				HeightRequest = 200,
+				HorizontalOptions = LayoutOptions.CenterAndExpand,
+				VerticalOptions = LayoutOptions.Start,
+
+			}, 0, 4, 1, 2);
 
 
-				gridDetail.Children.Add(name, 0, 0);
-				gridDetail.Children.Add(gender, 0, 1);
-				gridDetail.Children.Add(phone, 0, 2);
 
-				gridDetail.Children.Add(new Entry(), 1, 0);
-				gridDetail.Children.Add(new Entry(), 1, 1);
-				gridDetail.Children.Add(new Entry(), 1, 2);
+			//姓名
+			grid.Children.Add(new Label
+			{
+				Text = "姓名",
+				TextColor = Color.Accent,
+				FontSize = Device.GetNamedSize(NamedSize.Default, typeof(Label)),
+				FontAttributes = FontAttributes.Bold,
+				HorizontalOptions = LayoutOptions.Center,
+				VerticalOptions = LayoutOptions.Center,
+
+			}, 1, 3);
+
+			grid.Children.Add(new Entry
+			{
+				FontSize = Device.GetNamedSize(NamedSize.Default, typeof(Label)),
+				WidthRequest = 160,
+				FontAttributes = FontAttributes.None,
+				HorizontalOptions = LayoutOptions.Start,
+				VerticalOptions = LayoutOptions.Center,
+				TextColor = Color.Gray,
+				Keyboard = Keyboard.Default
+			}, 2, 3);
 
 
+
+			//性別
+			grid.Children.Add(new Label
+			{
+				Text = "性別",
+				TextColor = Color.Accent,
+				FontSize = Device.GetNamedSize(NamedSize.Default, typeof(Label)),
+				FontAttributes = FontAttributes.Bold,
+				HorizontalOptions = LayoutOptions.Center,
+				VerticalOptions = LayoutOptions.Center,
+
+			}, 1, 4);
+
+			Picker genderPicker = new Picker
+			{
+				VerticalOptions = LayoutOptions.CenterAndExpand,
+				HorizontalOptions = LayoutOptions.Start,
+				WidthRequest = 160,
+				TextColor = Color.Gray,
+
+
+			};
+			genderPicker.SelectedIndexChanged += (sender, args) =>
+				  {
+					  if (genderPicker.SelectedIndex == -1)
+					  {
+						  genderPicker.Title = "選擇性別";
+					  }
+
+					  else
+					  {
+						  genderPicker.Title = genderPicker.Items[genderPicker.SelectedIndex];
+					  }
+				  };
+
+			foreach (string genderName in GenderToName.Keys)
+			{
+				genderPicker.Items.Add(genderName);
 			}
+			grid.Children.Add(genderPicker, 2, 4);
 
-			var lawConfirm = new Label { Text = "我已閱讀並同意「享卡出行服務條款」" };
 
-			Button nexStep = new Button
+			//電話
+			grid.Children.Add(new Label
+			{
+				Text = "電話",
+				TextColor = Color.Accent,
+				FontSize = Device.GetNamedSize(NamedSize.Default, typeof(Label)),
+				FontAttributes = FontAttributes.None,
+				HorizontalOptions = LayoutOptions.Center,
+				VerticalOptions = LayoutOptions.Center,
+
+			}, 1, 5);
+			grid.Children.Add(new Entry
+			{
+				FontSize = Device.GetNamedSize(NamedSize.Default, typeof(Label)),
+				WidthRequest = 160,
+				FontAttributes = FontAttributes.None,
+				HorizontalOptions = LayoutOptions.Start,
+				VerticalOptions = LayoutOptions.Center,
+				TextColor = Color.Gray,
+				Keyboard = Keyboard.Telephone
+			}, 2, 5);
+
+			//暱稱
+			grid.Children.Add(new Label
+			{
+				Text = "暱稱",
+				TextColor = Color.Accent,
+				FontSize = Device.GetNamedSize(NamedSize.Default, typeof(Label)),
+				FontAttributes = FontAttributes.Bold,
+				HorizontalOptions = LayoutOptions.Center,
+				VerticalOptions = LayoutOptions.Center,
+
+			}, 1, 6);
+
+			grid.Children.Add(new Entry
+			{
+				FontSize = Device.GetNamedSize(NamedSize.Default, typeof(Label)),
+				WidthRequest = 160,
+				FontAttributes = FontAttributes.None,
+				HorizontalOptions = LayoutOptions.Start,
+				VerticalOptions = LayoutOptions.Center,
+				TextColor = Color.Gray,
+				Keyboard = Keyboard.Default,
+			}, 2, 6);
+
+
+
+			//checkbox 享卡條款
+			StackLayout stacklayout = new StackLayout
+			{
+				Orientation = StackOrientation.Horizontal,
+				HorizontalOptions = LayoutOptions.CenterAndExpand,
+				WidthRequest = 250,
+
+				Children =
+				{
+					new Button
+					{
+						Image = "uncheck.png",
+						WidthRequest = 20,
+						HeightRequest = 20,
+						HorizontalOptions = LayoutOptions.End,
+					},
+
+
+
+					new Button
+					{
+						Text = "我已閱讀並同意《享卡出行服務條款》",
+						TextColor = Color.Orange,
+						FontSize = Device.GetNamedSize(NamedSize.Micro, typeof(Label)),
+						WidthRequest = 230,
+					},
+
+
+				},//children
+			};
+			grid.Children.Add(stacklayout, 0, 4, 8, 9);
+
+			//下一步
+			var nexStep = new Button
 			{
 				Text = "下一步",
-				Font = Font.SystemFontOfSize(NamedSize.Medium),
+				TextColor = Color.Blue,
+				FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)),
+				WidthRequest = 150,
+				FontAttributes = FontAttributes.None,
 				BorderWidth = 2,
+				BorderColor = Color.Blue,
 				HorizontalOptions = LayoutOptions.Center,
 				VerticalOptions = LayoutOptions.CenterAndExpand
 			};
 			nexStep.Clicked += Submit_Button_Clicked;
+			grid.Children.Add(nexStep, 0, 4, 9, 10);
 
-			bigGrid.Children.Add(imageBt, 0, 0);
-			bigGrid.Children.Add(gridDetail, 0, 1);
-			bigGrid.Children.Add(lawConfirm, 0, 2);
-			bigGrid.Children.Add(nexStep, 0, 3);
+			// Accomodate iPhone status bar.
+			this.Padding = new Thickness(10, Device.OnPlatform(20, 0, 0), 10, 5);
 
-			this.Content = bigGrid;
+
+
+
+
+
+			ScrollContainer.Content = grid;
+			Content = ScrollContainer;
+
 
 		}
 
