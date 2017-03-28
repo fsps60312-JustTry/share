@@ -63,7 +63,7 @@ namespace share
 
 			};
 
-			//說明
+			//說明/
 			grid.Children.Add(new Button
 			{
 				Text = "說明",
@@ -209,7 +209,7 @@ namespace share
 				Orientation = StackOrientation.Horizontal,
 				HorizontalOptions = LayoutOptions.Center,
 				//WidthRequest = 250,
-				//Padding = 0,
+				//	Padding = 0,
 
 				Children =
 				{
