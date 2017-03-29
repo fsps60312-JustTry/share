@@ -1,5 +1,6 @@
 ﻿using Xamarin.Forms;
 
+
 namespace share
 {
 	public partial class App : Application
@@ -8,7 +9,7 @@ namespace share
 		{
 			InitializeComponent();
 
-			MainPage = new NavigationPage(new SignUp());
+			MainPage = new NavigationPage(new Menu_Page());
 		}
 
 		protected override void OnStart()
