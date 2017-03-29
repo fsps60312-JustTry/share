@@ -153,6 +153,7 @@
     <Compile Include="History_Page.xaml.cs">
       <DependentUpon>History_Page.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Constants.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

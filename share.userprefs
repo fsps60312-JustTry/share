@@ -1,14 +1,15 @@
 ﻿<Properties StartupConfiguration="{5F12D0BB-FD11-455D-9529-947D5F336831}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="share/LogIn.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="share/Constants.cs">
     <Files>
       <File FileName="share/LogIn.xaml.cs" Line="16" Column="1" />
-      <File FileName="share/SignUp.xaml.cs" Line="8" Column="2" />
+      <File FileName="share/SignUp.xaml.cs" Line="11" Column="2" />
       <File FileName="share/My_Vehicle_Page.xaml.cs" Line="21" Column="1" />
       <File FileName="share/Add_Vehicle_Page.xaml.cs" Line="301" Column="5" />
       <File FileName="share/Edit_Page.xaml.cs" Line="31" Column="32" />
       <File FileName="share/Personal_Page.xaml.cs" Line="207" Column="4" />
       <File FileName="share/DriverVerification.xaml.cs" Line="57" Column="5" />
       <File FileName="share/ConfirmVerification.xaml.cs" Line="177" Column="11" />
+      <File FileName="share/Constants.cs" Line="11" Column="14" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -19,14 +20,13 @@
               <Node name="Add_Vehicle_Page.xaml" expanded="True" />
               <Node name="App.xaml" expanded="True" />
               <Node name="ConfirmVerification.xaml" expanded="True" />
+              <Node name="Constants.cs" selected="True" />
               <Node name="Customer_Menu_Page.xaml" expanded="True" />
               <Node name="DriverVerification.xaml" expanded="True" />
               <Node name="Edit_Page.xaml" expanded="True" />
               <Node name="History_Page.xaml" expanded="True" />
               <Node name="IDVerification.xaml" expanded="True" />
-              <Node name="LogIn.xaml" expanded="True">
-                <Node name="LogIn.xaml.cs" selected="True" />
-              </Node>
+              <Node name="LogIn.xaml" expanded="True" />
               <Node name="Menu_Page.xaml" expanded="True" />
               <Node name="My_Vehicle_Page.xaml" expanded="True" />
               <Node name="Payment_Page.xaml" expanded="True" />
