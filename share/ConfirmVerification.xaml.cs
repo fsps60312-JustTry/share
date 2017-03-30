@@ -175,7 +175,7 @@ namespace share
 		void Submit_Button_Clicked(object sender, System.EventArgs e)
 		{
 			//進到下一頁
-			var newPage = new Menu_Page();
+			var newPage = new NavigationPage(new Menu_Page());
 
 			Navigation.PushModalAsync(newPage);
 

@@ -1,56 +1,8 @@
 ﻿<Properties StartupConfiguration="{5F12D0BB-FD11-455D-9529-947D5F336831}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="share/Constants.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="share/TodoItem.cs">
     <Files>
-      <File FileName="share/LogIn.xaml.cs" Line="16" Column="1" />
-      <File FileName="share/SignUp.xaml.cs" Line="11" Column="2" />
-      <File FileName="share/My_Vehicle_Page.xaml.cs" Line="21" Column="1" />
-      <File FileName="share/Add_Vehicle_Page.xaml.cs" Line="301" Column="5" />
-      <File FileName="share/Edit_Page.xaml.cs" Line="31" Column="32" />
-      <File FileName="share/Personal_Page.xaml.cs" Line="207" Column="4" />
-      <File FileName="share/DriverVerification.xaml.cs" Line="57" Column="5" />
-      <File FileName="share/ConfirmVerification.xaml.cs" Line="177" Column="11" />
-      <File FileName="share/Constants.cs" Line="11" Column="14" />
+      <File FileName="share/TodoItem.cs" Line="38" Column="3" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="share" expanded="True">
-            <Node name="share" expanded="True">
-              <Node name="Account_Page.xaml" expanded="True" />
-              <Node name="Add_Vehicle_Page.xaml" expanded="True" />
-              <Node name="App.xaml" expanded="True" />
-              <Node name="ConfirmVerification.xaml" expanded="True" />
-              <Node name="Constants.cs" selected="True" />
-              <Node name="Customer_Menu_Page.xaml" expanded="True" />
-              <Node name="DriverVerification.xaml" expanded="True" />
-              <Node name="Edit_Page.xaml" expanded="True" />
-              <Node name="History_Page.xaml" expanded="True" />
-              <Node name="IDVerification.xaml" expanded="True" />
-              <Node name="LogIn.xaml" expanded="True" />
-              <Node name="Menu_Page.xaml" expanded="True" />
-              <Node name="My_Vehicle_Page.xaml" expanded="True" />
-              <Node name="Payment_Page.xaml" expanded="True" />
-              <Node name="Personal_Page.xaml" expanded="True" />
-              <Node name="Setting_Page.xaml" expanded="True" />
-              <Node name="SignUp.xaml" expanded="True" />
-            </Node>
-            <Node name="share.Droid" expanded="True">
-              <Node name="Resources" expanded="True">
-                <Node name="drawable" expanded="True" />
-                <Node name="drawable-hdpi" expanded="True" />
-                <Node name="drawable-xhdpi" expanded="True" />
-                <Node name="drawable-xxhdpi" expanded="True" />
-                <Node name="layout" expanded="True" />
-                <Node name="values" expanded="True" />
-              </Node>
-            </Node>
-            <Node name="share.iOS" expanded="True">
-              <Node name="Resources" expanded="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.share.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.98857903-B1EF-4701-83E5-8C8289F50AFA" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

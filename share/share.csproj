@@ -154,6 +154,8 @@
       <DependentUpon>History_Page.xaml</DependentUpon>
     </Compile>
     <Compile Include="Constants.cs" />
+    <Compile Include="TodoItemManager.cs" />
+    <Compile Include="TodoItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

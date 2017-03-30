@@ -13,7 +13,7 @@ namespace share
 
 			// 下一頁 nav 的返回鍵 會變成 ""
 			NavigationPage.SetBackButtonTitle(this, "");
-
+	
 			InitializeComponent();
 
 			//Label name = new Label

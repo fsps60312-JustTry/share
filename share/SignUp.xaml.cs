@@ -2,11 +2,16 @@
 using System.Collections.Generic;
 
 using Xamarin.Forms;
+using Microsoft.WindowsAzure.MobileServices;
+
 
 namespace share
 {
+
+
 	public partial class SignUp : ContentPage
 	{
+		
 		Dictionary<string, String> GenderToName = new Dictionary<string, String>
 		{
 			{ "男", "男" },
@@ -15,7 +20,7 @@ namespace share
 
 		};
 
-
+			
 		public SignUp()
 		{
 			InitializeComponent();
