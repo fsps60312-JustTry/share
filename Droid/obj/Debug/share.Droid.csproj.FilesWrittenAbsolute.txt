@@ -45,3 +45,8 @@
 /Users/mac/Desktop/share/Droid/obj/Debug/res/drawable/sharecar_fb.png
 /Users/mac/Desktop/share/Droid/obj/Debug/res/drawable/check.png
 /Users/mac/Desktop/share/Droid/obj/Debug/res/drawable/uncheck.png
+/Users/mac/Desktop/share/Droid/bin/Debug/System.Net.Http.Extensions.dll
+/Users/mac/Desktop/share/Droid/bin/Debug/System.Net.Http.Primitives.dll
+/Users/mac/Desktop/share/Droid/bin/Debug/Newtonsoft.Json.dll
+/Users/mac/Desktop/share/Droid/bin/Debug/Microsoft.WindowsAzure.Mobile.dll
+/Users/mac/Desktop/share/Droid/bin/Debug/Microsoft.WindowsAzure.Mobile.Ext.dll

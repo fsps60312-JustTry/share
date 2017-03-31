@@ -58,3 +58,7 @@
 /Users/mac/Desktop/share/share/obj/Debug/share.My_Vehicle_Page.xaml.g.cs
 /Users/mac/Desktop/share/share/obj/Debug/share.History_Page.xaml
 /Users/mac/Desktop/share/share/obj/Debug/share.History_Page.xaml.g.cs
+/Users/mac/Desktop/share/share/bin/Debug/System.Net.Http.Extensions.dll
+/Users/mac/Desktop/share/share/bin/Debug/System.Net.Http.Primitives.dll
+/Users/mac/Desktop/share/share/bin/Debug/Newtonsoft.Json.dll
+/Users/mac/Desktop/share/share/bin/Debug/Microsoft.WindowsAzure.Mobile.dll

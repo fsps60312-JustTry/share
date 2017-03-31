@@ -20,11 +20,13 @@ namespace share.Droid
 
 			base.OnCreate(bundle);
 
-			// Initialize Azure Mobile Apps
-			Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
 
 			// Initialize Xamarin Forms
 			global::Xamarin.Forms.Forms.Init(this, bundle);
+
+			// Initialize Azure Mobile Apps
+			Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
+
 
 			LoadApplication(new App());
 		}

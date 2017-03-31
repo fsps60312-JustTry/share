@@ -25,3 +25,8 @@
 /Users/mac/Desktop/share/iOS/obj/iPhoneSimulator/Debug/optimized/sharecar_fb.png
 /Users/mac/Desktop/share/iOS/obj/iPhoneSimulator/Debug/optimized/check.png
 /Users/mac/Desktop/share/iOS/obj/iPhoneSimulator/Debug/optimized/uncheck.png
+/Users/mac/Desktop/share/iOS/bin/iPhoneSimulator/Debug/System.Net.Http.Extensions.dll
+/Users/mac/Desktop/share/iOS/bin/iPhoneSimulator/Debug/System.Net.Http.Primitives.dll
+/Users/mac/Desktop/share/iOS/bin/iPhoneSimulator/Debug/Newtonsoft.Json.dll
+/Users/mac/Desktop/share/iOS/bin/iPhoneSimulator/Debug/Microsoft.WindowsAzure.Mobile.dll
+/Users/mac/Desktop/share/iOS/bin/iPhoneSimulator/Debug/Microsoft.WindowsAzure.Mobile.Ext.dll

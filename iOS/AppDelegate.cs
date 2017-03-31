@@ -12,11 +12,13 @@ namespace share.iOS
 	{
 		public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 		{
+			
+			// Initialize Xamarin Forms
+			global::Xamarin.Forms.Forms.Init();
+
 			// Initialize Azure Mobile Apps
 			Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
 
-			// Initialize Xamarin Forms
-			global::Xamarin.Forms.Forms.Init();
 
 			LoadApplication(new App());
 

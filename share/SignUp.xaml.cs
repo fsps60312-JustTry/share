@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 
 using Xamarin.Forms;
+using System.Threading.Tasks;
+
 using Microsoft.WindowsAzure.MobileServices;
 
 
@@ -11,7 +13,11 @@ namespace share
 
 	public partial class SignUp : ContentPage
 	{
-		
+
+
+		MobileServiceClient client;
+		IMobileServiceTable<TodoItem> todoTable;
+
 		Dictionary<string, String> GenderToName = new Dictionary<string, String>
 		{
 			{ "男", "男" },
@@ -20,10 +26,27 @@ namespace share
 
 		};
 
+		Entry NameEntry = new Entry
+		{
+			FontSize = Device.GetNamedSize(NamedSize.Default, typeof(Label)),
+			WidthRequest = 160,
+			FontAttributes = FontAttributes.None,
+			HorizontalOptions = LayoutOptions.Start,
+			VerticalOptions = LayoutOptions.Center,
+			TextColor = Color.Gray,
+			Keyboard = Keyboard.Default
+		};
+
+
 			
 		public SignUp()
 		{
 			InitializeComponent();
+
+
+			this.client = new MobileServiceClient("http://sharecarenjoylife.azurewebsites.net");
+			this.todoTable = client.GetTable<TodoItem>();
+
 
 			ScrollView ScrollContainer = new ScrollView
 			{
@@ -68,7 +91,20 @@ namespace share
 
 			};
 
+
+			Entry NameEntry = new Entry
+			{
+				FontSize = Device.GetNamedSize(NamedSize.Default, typeof(Label)),
+				WidthRequest = 160,
+				FontAttributes = FontAttributes.None,
+				HorizontalOptions = LayoutOptions.Start,
+				VerticalOptions = LayoutOptions.Center,
+				TextColor = Color.Gray,
+				Keyboard = Keyboard.Default
+			};
 			//說明/
+
+
 			grid.Children.Add(new Button
 			{
 				Text = "說明",
@@ -107,16 +143,7 @@ namespace share
 
 			}, 1, 3);
 
-			grid.Children.Add(new Entry
-			{
-				FontSize = Device.GetNamedSize(NamedSize.Default, typeof(Label)),
-				WidthRequest = 160,
-				FontAttributes = FontAttributes.None,
-				HorizontalOptions = LayoutOptions.Start,
-				VerticalOptions = LayoutOptions.Center,
-				TextColor = Color.Gray,
-				Keyboard = Keyboard.Default
-			}, 2, 3);
+			grid.Children.Add(NameEntry, 2, 3);
 
 
 
@@ -283,16 +310,28 @@ namespace share
 
 		}
 
-		void Submit_Button_Clicked(object sender, System.EventArgs e)
+		async void Submit_Button_Clicked(object sender, System.EventArgs e)
 		{
+
+			await todoTable.InsertAsync(new TodoItem
+			{
+				Name = DateTime.Now.ToString()
+				//Name = NameEntry.Text
+				//Name = DateTime.Now.ToString()
+			});
+
+
 			//進到下一頁
 			var newPage = new IDVerification();
 
-			Navigation.PushAsync(newPage);
+			await Navigation.PushAsync(newPage);
 
-			NavigationPage.SetHasBackButton(newPage, false);
 			//PushAsync = 到下一頁，有 Back 按鈕
 			//PushModalAsync =  到下一頁，沒有 Back 按鈕
 		}
+
+
+
+
 	}
 }
