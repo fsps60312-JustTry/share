@@ -18,6 +18,9 @@ namespace share
 		MobileServiceClient client;
 		IMobileServiceTable<TodoItem> todoTable;
 
+		TodoItemManager manager;
+
+
 		Dictionary<string, String> GenderToName = new Dictionary<string, String>
 		{
 			{ "男", "男" },
@@ -26,16 +29,9 @@ namespace share
 
 		};
 
-		Entry NameEntry = new Entry
-		{
-			FontSize = Device.GetNamedSize(NamedSize.Default, typeof(Label)),
-			WidthRequest = 160,
-			FontAttributes = FontAttributes.None,
-			HorizontalOptions = LayoutOptions.Start,
-			VerticalOptions = LayoutOptions.Center,
-			TextColor = Color.Gray,
-			Keyboard = Keyboard.Default
-		};
+		Entry NameEntry;
+
+		String AzName;
 
 
 			
@@ -92,7 +88,7 @@ namespace share
 			};
 
 
-			Entry NameEntry = new Entry
+			NameEntry = new Entry
 			{
 				FontSize = Device.GetNamedSize(NamedSize.Default, typeof(Label)),
 				WidthRequest = 160,
@@ -100,8 +96,11 @@ namespace share
 				HorizontalOptions = LayoutOptions.Start,
 				VerticalOptions = LayoutOptions.Center,
 				TextColor = Color.Gray,
-				Keyboard = Keyboard.Default
+				Keyboard = Keyboard.Default,
+				BindingContext = AzName
 			};
+
+
 			//說明/
 
 
@@ -310,21 +309,13 @@ namespace share
 
 		}
 
-		async void Submit_Button_Clicked(object sender, System.EventArgs e)
+
+		void Submit_Button_Clicked(object sender, System.EventArgs e)
 		{
-
-			await todoTable.InsertAsync(new TodoItem
-			{
-				Name = DateTime.Now.ToString()
-				//Name = NameEntry.Text
-				//Name = DateTime.Now.ToString()
-			});
-
-
+			
 			//進到下一頁
 			var newPage = new IDVerification();
-
-			await Navigation.PushAsync(newPage);
+			Navigation.PushAsync(newPage);
 
 			//PushAsync = 到下一頁，有 Back 按鈕
 			//PushModalAsync =  到下一頁，沒有 Back 按鈕

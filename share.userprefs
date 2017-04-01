@@ -1,12 +1,30 @@
 ﻿<Properties StartupConfiguration="{5F12D0BB-FD11-455D-9529-947D5F336831}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="share/App.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="share/SignUp.xaml.cs">
     <Files>
       <File FileName="share/TodoItem.cs" Line="20" Column="4" />
       <File FileName="share/TodoItemManager.cs" Line="92" Column="54" />
-      <File FileName="share/SignUp.xaml.cs" Line="107" Column="4" />
+      <File FileName="share/SignUp.xaml.cs" Line="108" Column="5" />
       <File FileName="share/ConfirmVerification.xaml.cs" Line="1" Column="1" />
-      <File FileName="share/App.xaml.cs" Line="14" Column="3" />
+      <File FileName="share/App.xaml.cs" Line="17" Column="34" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="share" expanded="True">
+            <Node name="share" expanded="True">
+              <Node name="References" expanded="True" />
+              <Node name="App.xaml" expanded="True" />
+              <Node name="ConfirmVerification.xaml" expanded="True" />
+              <Node name="SignUp.xaml" expanded="True">
+                <Node name="SignUp.xaml.cs" selected="True" />
+              </Node>
+            </Node>
+            <Node name="share.Droid" expanded="True" />
+            <Node name="share.iOS" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.share.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.F2D4E591-0DD3-49D5-8EA8-134264FF4EA9" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
