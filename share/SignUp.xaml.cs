@@ -101,7 +101,7 @@ namespace share
 			};
 
 
-			//說明/
+			//說明
 
 
 			grid.Children.Add(new Button
