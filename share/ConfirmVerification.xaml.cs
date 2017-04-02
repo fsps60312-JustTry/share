@@ -172,13 +172,13 @@ namespace share
 
 		}
 
-		void Submit_Button_Clicked(object sender, System.EventArgs e)
-		{
-			//進到下一頁
-			var newPage = new NavigationPage(new Menu_Page());
+		async void Submit_Button_Clicked(object sender, System.EventArgs e)
+        {
+            //進到下一頁
+            var newPage = new NavigationPage(new Menu_Page());
 
-			Navigation.PushModalAsync(newPage);
-
+            App.Current.MainPage = newPage;
+            //await Navigation.PushModalAsync(newPage);
 			//NavigationPage.SetHasBackButton(newPage, false);
 
 			//PushAsync = 到下一頁，有 Back 按鈕
