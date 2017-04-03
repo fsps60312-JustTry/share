@@ -1,4 +1,4 @@
-﻿<Properties StartupConfiguration="{5F12D0BB-FD11-455D-9529-947D5F336831}|Default">
+﻿<Properties StartupConfiguration="{BB64B759-DA2D-4DF7-AFEE-8F665A6718B1}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="share/SignUp.xaml.cs">
     <Files>
       <File FileName="share/TodoItem.cs" Line="20" Column="4" />
