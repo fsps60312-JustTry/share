@@ -7,34 +7,42 @@ namespace share
 {
 	public partial class Personal_Page : ContentPage
 	{
+        private void LoadData()
+        {
+            LBname.Text = PersonalPage.PersonalData.main.data.Name;
+            LBnickName.Text = PersonalPage.PersonalData.main.data.PhoneNumber;
+            LBphoneNumber.Text = PersonalPage.PersonalData.main.data.NickName;
+        }
+        private Label LBname, LBnickName, LBphoneNumber;
         public Personal_Page()
         {
-
+            InitializeViews();
+            LoadData();
+        }
+        private void InitializeViews()
+        {
             // 下一頁 nav 的返回鍵 會變成 ""
             NavigationPage.SetBackButtonTitle(this, "取消");
 
             InitializeComponent();
 
-
-
             // Nav RIGHT
             ToolbarItems.Add(new ToolbarItem("編輯", "", () =>
             {
                 var newPage = new Edit_Page();
-
+                newPage.Disappearing += delegate
+                {
+                    LoadData();
+                };
                 Navigation.PushAsync(newPage);
                 //PushAsync = 到下一頁，有 Back 按鈕
                 //PushModalAsync =  到下一頁，沒有 Back 按鈕
-
             }));
-
-
 
             ScrollView ScrollContainer = new ScrollView
             {
                 Orientation = ScrollOrientation.Vertical,
             };
-
 
             // add a grid
             Grid grid = new Grid
@@ -66,14 +74,6 @@ namespace share
 
             };
 
-
-
-
-
-
-
-
-
             grid.Children.Add(new Image
             {
                 Source = "addUser.png",
@@ -82,19 +82,15 @@ namespace share
 
             }, 0, 4, 0, 1);
 
-            {// Nick name
-                var label = new Label
-                {
-                    FontSize = Device.GetNamedSize(NamedSize.Micro, typeof(Label)),
-                    FontAttributes = FontAttributes.None,
-                    TextColor = Color.Gray,
-                    VerticalOptions = LayoutOptions.Start,
-                    HorizontalOptions = LayoutOptions.Center
-                };
-                label.SetBinding(Label.TextProperty, "BindingText");
-                label.BindingContext = new { BindingText = PersonalPage.PersonalData.main.data.NickName };
-                grid.Children.Add(label, 0, 4, 1, 2);
-            }
+            LBnickName = new Label
+            {
+                FontSize = Device.GetNamedSize(NamedSize.Micro, typeof(Label)),
+                FontAttributes = FontAttributes.None,
+                TextColor = Color.Gray,
+                VerticalOptions = LayoutOptions.Start,
+                HorizontalOptions = LayoutOptions.Center
+            };
+            grid.Children.Add(LBnickName, 0, 4, 1, 2);
 
             grid.Children.Add(new Label
             {
@@ -103,23 +99,18 @@ namespace share
                 FontAttributes = FontAttributes.Bold,
                 TextColor = Color.Gray,
                 VerticalOptions = LayoutOptions.Center,
-                HorizontalOptions = LayoutOptions.Start,
-
+                HorizontalOptions = LayoutOptions.Start
             }, 1, 2);
 
-            {// Name
-                var label = new Label
-                {
-                    FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label)),
-                    FontAttributes = FontAttributes.None,
-                    TextColor = Color.Gray,
-                    VerticalOptions = LayoutOptions.Center,
-                    HorizontalOptions = LayoutOptions.End
-                };
-                label.SetBinding(Label.TextProperty, "BindingText");
-                label.BindingContext = new { BindingText = PersonalPage.PersonalData.main.data.Name };
-                grid.Children.Add(label, 2, 2);
-            }
+            LBname = new Label
+            {
+                FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label)),
+                FontAttributes = FontAttributes.None,
+                TextColor = Color.Gray,
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.End
+            };
+            grid.Children.Add(LBname, 2, 2);
 
             grid.Children.Add(new Label
             {
@@ -128,23 +119,18 @@ namespace share
                 FontAttributes = FontAttributes.Bold,
                 TextColor = Color.Gray,
                 VerticalOptions = LayoutOptions.Center,
-                HorizontalOptions = LayoutOptions.Start,
-
+                HorizontalOptions = LayoutOptions.Start
             }, 1, 3);
 
+            LBphoneNumber = new Label
             {
-                var label = new Label
-                {
-                    FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label)),
-                    FontAttributes = FontAttributes.None,
-                    TextColor = Color.Gray,
-                    VerticalOptions = LayoutOptions.Center,
-                    HorizontalOptions = LayoutOptions.End,
-                };
-                label.SetBinding(Label.TextProperty, "BindingText");
-                label.BindingContext = new { BindingText = PersonalPage.PersonalData.main.data.PhoneNumber };
-                grid.Children.Add(label, 2, 3);
-            }
+                FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label)),
+                FontAttributes = FontAttributes.None,
+                TextColor = Color.Gray,
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.End,
+            };
+            grid.Children.Add(LBphoneNumber, 2, 3);
 
             grid.Children.Add(new Label
             {
@@ -153,8 +139,7 @@ namespace share
                 FontAttributes = FontAttributes.Bold,
                 TextColor = Color.Gray,
                 VerticalOptions = LayoutOptions.Center,
-                HorizontalOptions = LayoutOptions.Start,
-
+                HorizontalOptions = LayoutOptions.Start
             }, 1, 5);
 
             grid.Children.Add(new Button
@@ -178,28 +163,17 @@ namespace share
 
             }, 1, 6);
 
-
-
             grid.Children.Add(new Button
             {
                 Text = "已完成認證",
                 FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label)),
                 TextColor = Color.Gray,
                 VerticalOptions = LayoutOptions.Center,
-                HorizontalOptions = LayoutOptions.End,
-
-
+                HorizontalOptions = LayoutOptions.End
             }, 2, 6);
-
-
-
 
             // Accomodate iPhone status bar.
             this.Padding = new Thickness(10, Device.OnPlatform(20, 0, 0), 10, 5);
-
-
-
-
 
             ScrollContainer.Content = grid;
             Content = ScrollContainer;

@@ -7,19 +7,28 @@ namespace share
 {
 	public partial class Edit_Page : ContentPage
 	{
-        private PersonalPage.PersonalData data;
         public static readonly BindableProperty BindingNameProperty = BindableProperty.Create("BindingName", typeof(string), typeof(Edit_Page));
         public static readonly BindableProperty BindingNickNameProperty = BindableProperty.Create("BindingNickName", typeof(string), typeof(Edit_Page));
         public static readonly BindableProperty BindingPhoneNumberProperty = BindableProperty.Create("BindingPhoneNumber", typeof(string), typeof(Edit_Page));
-        private string BindingName
+
+        // The following attributes must be public
+        public string BindingName
         {
             get { return (string)GetValue(BindingNameProperty); }
             set { SetValue(BindingNameProperty, value); }
         }
+        public string BindingNickName
+        {
+            get { return (string)GetValue(BindingNickNameProperty); }
+            set { SetValue(BindingNickNameProperty, value); }
+        }
+        public string BindingPhoneNumber
+        {
+            get { return (string)GetValue(BindingPhoneNumberProperty); }
+            set { SetValue(BindingPhoneNumberProperty, value); }
+        }
         private void LoadData()
         {
-            data = PersonalPage.PersonalData.main;
-
             // BindingContext
             // https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/
             
@@ -27,10 +36,25 @@ namespace share
             ECname.BindingContext = this;
 
             ECnickName.SetBinding(EntryCell.TextProperty, "BindingNickName", BindingMode.TwoWay);
-            ECnickName.BindingContext = new { BindingText = data.data.NickName };
+            ECnickName.BindingContext = this;
 
             ECphoneNumber.SetBinding(EntryCell.TextProperty, "BindingPhoneNumber", BindingMode.TwoWay);
-            ECphoneNumber.BindingContext = new { BindingText = data.data.PhoneNumber };
+            ECphoneNumber.BindingContext = this;
+
+            var data = PersonalPage.PersonalData.main;
+
+            BindingName = data.data.Name;
+            BindingNickName = data.data.NickName;
+            BindingPhoneNumber = data.data.PhoneNumber;
+        }
+        private void SaveData()
+        {
+            var data = PersonalPage.PersonalData.main;
+            data.data.Name = BindingName;
+            data.data.NickName = BindingNickName;
+            data.data.PhoneNumber = BindingPhoneNumber;
+            PersonalPage.PersonalData.main = data;
+            PersonalPage.PersonalData.main.SaveAsync();
         }
         private EntryCell ECname, ECnickName, ECphoneNumber;
         private void InitializeViews()
@@ -41,10 +65,9 @@ namespace share
             // Nav RIGHT
             ToolbarItems.Add(new ToolbarItem("完成", "", () =>
             {
-                DisplayAlert("", $"{ECname.Text}\r\n{ECnickName.Text}\r\n{ECphoneNumber.Text}\r\n{tname}\r\n{data.data.NickName}\r\n{data.data.PhoneNumber}", "OK");
-                PersonalPage.PersonalData.main = data;
-                if (tname != "tname") Navigation.PopAsync();
-                else tname = "hihi";
+                //DisplayAlert("", $"{ECname.Text}\r\n{ECnickName.Text}\r\n{ECphoneNumber.Text}\r\n{tname}\r\n{data.data.NickName}\r\n{data.data.PhoneNumber}", "OK");
+                SaveData();
+                Navigation.PopAsync();
             }));
 
             // Table View
