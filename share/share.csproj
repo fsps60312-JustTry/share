@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -33,16 +33,16 @@
     <EmbeddedResource Include="LogIn.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="SignUp.xaml">
+    <EmbeddedResource Include="SignUpPage\SignUp.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="IDVerification.xaml">
+    <EmbeddedResource Include="SignUpPage\IDVerification.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="DriverVerification.xaml">
+    <EmbeddedResource Include="SignUpPage\DriverVerification.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConfirmVerification.xaml">
+    <EmbeddedResource Include="SignUpPage\ConfirmVerification.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Map.xaml">
@@ -54,28 +54,28 @@
     <EmbeddedResource Include="Customer_Menu_Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Edit_Page.xaml">
+    <EmbeddedResource Include="PersonalPage\Edit_Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Personal_Page.xaml">
+    <EmbeddedResource Include="PersonalPage\Personal_Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="My_Purse_Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Payment_Page.xaml">
+    <EmbeddedResource Include="SettingsPage\Payment_Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Setting_Page.xaml">
+    <EmbeddedResource Include="SettingsPage\Setting_Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Account_Page.xaml">
+    <EmbeddedResource Include="SettingsPage\Account_Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Common_Address_Page.xaml">
+    <EmbeddedResource Include="SettingsPage\Common_Address_Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Emergency_Page.xaml">
+    <EmbeddedResource Include="SettingsPage\Emergency_Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Add_Vehicle_Page.xaml">
@@ -92,6 +92,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PersonalPage\PersonalData.cs" />
     <Compile Include="sharePage.xaml.cs">
       <DependentUpon>sharePage.xaml</DependentUpon>
     </Compile>
@@ -99,16 +100,16 @@
     <Compile Include="LogIn.xaml.cs">
       <DependentUpon>LogIn.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SignUp.xaml.cs">
+    <Compile Include="SignUpPage\SignUp.xaml.cs">
       <DependentUpon>SignUp.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IDVerification.xaml.cs">
+    <Compile Include="SignUpPage\IDVerification.xaml.cs">
       <DependentUpon>IDVerification.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DriverVerification.xaml.cs">
+    <Compile Include="SignUpPage\DriverVerification.xaml.cs">
       <DependentUpon>DriverVerification.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ConfirmVerification.xaml.cs">
+    <Compile Include="SignUpPage\ConfirmVerification.xaml.cs">
       <DependentUpon>ConfirmVerification.xaml</DependentUpon>
     </Compile>
     <Compile Include="Map.xaml.cs">
@@ -120,28 +121,28 @@
     <Compile Include="Customer_Menu_Page.xaml.cs">
       <DependentUpon>Customer_Menu_Page.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Edit_Page.xaml.cs">
+    <Compile Include="PersonalPage\Edit_Page.xaml.cs">
       <DependentUpon>Edit_Page.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Personal_Page.xaml.cs">
+    <Compile Include="PersonalPage\Personal_Page.xaml.cs">
       <DependentUpon>Personal_Page.xaml</DependentUpon>
     </Compile>
     <Compile Include="My_Purse_Page.xaml.cs">
       <DependentUpon>My_Purse_Page.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Payment_Page.xaml.cs">
+    <Compile Include="SettingsPage\Payment_Page.xaml.cs">
       <DependentUpon>Payment_Page.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Setting_Page.xaml.cs">
+    <Compile Include="SettingsPage\Setting_Page.xaml.cs">
       <DependentUpon>Setting_Page.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Account_Page.xaml.cs">
+    <Compile Include="SettingsPage\Account_Page.xaml.cs">
       <DependentUpon>Account_Page.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Common_Address_Page.xaml.cs">
+    <Compile Include="SettingsPage\Common_Address_Page.xaml.cs">
       <DependentUpon>Common_Address_Page.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Emergency_Page.xaml.cs">
+    <Compile Include="SettingsPage\Emergency_Page.xaml.cs">
       <DependentUpon>Emergency_Page.xaml</DependentUpon>
     </Compile>
     <Compile Include="Add_Vehicle_Page.xaml.cs">
@@ -158,6 +159,18 @@
     <Compile Include="TodoItem.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="PCLStorage, Version=1.0.2.0, Culture=neutral, PublicKeyToken=286fe515a2c35b64, processorArchitecture=MSIL">
+      <HintPath>..\packages\PCLStorage.1.0.2\lib\portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac\PCLStorage.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLStorage.Abstractions, Version=1.0.2.0, Culture=neutral, PublicKeyToken=286fe515a2c35b64, processorArchitecture=MSIL">
+      <HintPath>..\packages\PCLStorage.1.0.2\lib\portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac\PCLStorage.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Media, Version=2.6.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xam.Plugin.Media.2.6.2\lib\portable-net45+wp80+win8+wpa81\Plugin.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Media.Abstractions, Version=2.6.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xam.Plugin.Media.2.6.2\lib\portable-net45+wp80+win8+wpa81\Plugin.Media.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="Xamarin.Forms.Core">
       <HintPath>..\packages\Xamarin.Forms.2.3.3.193\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Core.dll</HintPath>
     </Reference>
@@ -182,8 +195,10 @@
     <Reference Include="System.Net.Http" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
