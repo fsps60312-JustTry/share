@@ -7,54 +7,18 @@ namespace share
 {
 	public partial class Edit_Page : ContentPage
 	{
-        public static readonly BindableProperty BindingNameProperty = BindableProperty.Create("BindingName", typeof(string), typeof(Edit_Page));
-        public static readonly BindableProperty BindingNickNameProperty = BindableProperty.Create("BindingNickName", typeof(string), typeof(Edit_Page));
-        public static readonly BindableProperty BindingPhoneNumberProperty = BindableProperty.Create("BindingPhoneNumber", typeof(string), typeof(Edit_Page));
-
-        // The following attributes must be public
-        public string BindingName
-        {
-            get { return (string)GetValue(BindingNameProperty); }
-            set { SetValue(BindingNameProperty, value); }
-        }
-        public string BindingNickName
-        {
-            get { return (string)GetValue(BindingNickNameProperty); }
-            set { SetValue(BindingNickNameProperty, value); }
-        }
-        public string BindingPhoneNumber
-        {
-            get { return (string)GetValue(BindingPhoneNumberProperty); }
-            set { SetValue(BindingPhoneNumberProperty, value); }
-        }
+        private PersonalPage.PersonalData.BindingData bindingData;
         private void LoadData()
         {
             // BindingContext
             // https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/
-            
-            ECname.SetBinding(EntryCell.TextProperty, "BindingName", BindingMode.TwoWay);
-            ECname.BindingContext = this;
 
-            ECnickName.SetBinding(EntryCell.TextProperty, "BindingNickName", BindingMode.TwoWay);
-            ECnickName.BindingContext = this;
-
-            ECphoneNumber.SetBinding(EntryCell.TextProperty, "BindingPhoneNumber", BindingMode.TwoWay);
-            ECphoneNumber.BindingContext = this;
-
-            var data = PersonalPage.PersonalData.main;
-
-            BindingName = data.data.Name;
-            BindingNickName = data.data.NickName;
-            BindingPhoneNumber = data.data.PhoneNumber;
+            bindingData = new PersonalPage.PersonalData.BindingData(PersonalPage.PersonalData.main);
+            bindingData.SetBinding(ECname, ECnickName, ECphoneNumber);
         }
         private void SaveData()
         {
-            var data = PersonalPage.PersonalData.main;
-            data.data.Name = BindingName;
-            data.data.NickName = BindingNickName;
-            data.data.PhoneNumber = BindingPhoneNumber;
-            PersonalPage.PersonalData.main = data;
-            PersonalPage.PersonalData.main.SaveAsync();
+            bindingData.SaveAsync(ref PersonalPage.PersonalData.main);
         }
         private EntryCell ECname, ECnickName, ECphoneNumber;
         private void InitializeViews()

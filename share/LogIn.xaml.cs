@@ -77,12 +77,7 @@ namespace share
 			};
 			// Build the page.
 			this.Content = stackLayout;
-
-
 		}
-
-
-
 		void Submit_Button_Clicked(object sender, System.EventArgs e)
 		{
 			//進到下一頁
@@ -92,6 +87,5 @@ namespace share
 			//PushAsync = 到下一頁，有 Back 按鈕
 			//PushModalAsync =  到下一頁，沒有 Back 按鈕
 		}
-
 	}
 }
