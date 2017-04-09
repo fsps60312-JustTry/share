@@ -10,7 +10,6 @@ namespace share
 
 		public LogIn()
 		{
-
 			// 下一頁 nav 的返回鍵 會變成 ""
 			NavigationPage.SetBackButtonTitle(this, "");
 	
@@ -68,20 +67,16 @@ namespace share
 
 					Facebook_Log_In
 					//grid
-
-
-
-
 				},
-
 			};
 			// Build the page.
 			this.Content = stackLayout;
 		}
 		void Submit_Button_Clicked(object sender, System.EventArgs e)
-		{
-			//進到下一頁
-			var newPage = new SignUp();
+        {
+            DisplayAlert("", "有人要租您的車", "我要賺錢！", "這次不要");
+            //進到下一頁
+            var newPage = new SignUp();
 
 			Navigation.PushAsync(newPage);
 			//PushAsync = 到下一頁，有 Back 按鈕
