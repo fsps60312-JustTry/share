@@ -53,16 +53,16 @@ namespace share
             GridPanel GDpanel;
             private partial class GridPanel:Grid
             {
+                private string[] options = new string[] { "訂單", "錢包", "車輛", "收藏", "客服", "設定" };
                 public GridPanel()
                 {
                     this.VerticalOptions = this.HorizontalOptions = LayoutOptions.FillAndExpand;
                     this.BackgroundColor = Color.FromRgb(1.0, 0.5, 0.0);
-                    int n = 5;
-                    for (int i = 0; i < n; i++) this.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Auto) });
-                    for(int i=0;i<n;i++)
+                    for (int i = 0; i < options.Length; i++) this.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Auto) });
+                    for(int i=0;i<options.Length;i++)
                     {
                         Button btn = new Button();
-                        btn.Text = "Option " + (i + 1).ToString();
+                        btn.Text = options[i];
                         btn.Clicked += delegate { OnPanelButtonClicked(btn.Text); };
                         this.Children.Add(btn, 0, i);
                     }
