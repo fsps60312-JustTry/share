@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 
 using Xamarin.Forms;
+using Xamarin.Forms.Maps;
 
 namespace share
 {
@@ -19,20 +20,45 @@ namespace share
         RelativeLayoutMain RLmain;
         private partial class RelativeLayoutMain : RelativeLayout
         {
+            AbsoluteLayout cover;
+            private void ShowPanel()
+            {
+                this.Children.Add(cover,
+                    Constraint.RelativeToParent((parent) => { return 0; }),
+                    Constraint.RelativeToParent((parent) => { return 0; }),
+                    Constraint.RelativeToParent((parent) => { return parent.Width; }),
+                    Constraint.RelativeToParent((parent) => { return parent.Height; }));
+                this.Children.Add(GDpanel,
+                    Constraint.RelativeToParent((parent) => { return 0; }),
+                    Constraint.RelativeToParent((parent) => { return 0; }),
+                    Constraint.RelativeToParent((parent) => { return parent.Width * 0.5; }),
+                    Constraint.RelativeToParent((parent) => { return parent.Height; }));
+                const double animationRate = 5.0;
+                this.Animate("ShowPanel", new Animation(new Action<double>((v) =>
+                 {
+                     GDpanel.TranslationX = this.Width * 0.5 * ((1.0-Math.Pow(2.0, animationRate * (1.0-v))/ Math.Pow(2.0, animationRate)) - 1.0);
+                     cover.BackgroundColor = Color.FromRgba(0.0, 0.0, 0.0, 0.5*v);
+                 }), 0, 1));
+            }
+            private void HidePanel()
+            {
+                const double animationRate = 5.0;
+                this.Animate("HidePanel", new Animation(new Action<double>((v) =>
+                {
+                    GDpanel.TranslationX = this.Width * 0.5 * ( -(1.0 - Math.Pow(2.0, animationRate * (1.0 - v)) / Math.Pow(2.0, animationRate)));
+                    cover.BackgroundColor = Color.FromRgba(0.0, 0.0, 0.0, 0.5 * (1.0 - v));
+                }), 0, 1), 16, 250, null, new Action<double, bool>((double a, bool b) =>
+                {
+                    this.Children.Remove(GDpanel);
+                    this.Children.Remove(cover);
+                }));
+            }
             public RelativeLayoutMain()
             {
                 this.VerticalOptions = this.HorizontalOptions = LayoutOptions.FillAndExpand;
                 {
                     GDmain = new GridMain();
-                    GDmain.PanelButtonClicked += delegate
-                    {
-                        GDmain.IsEnabled = false;
-                        this.Children.Add(GDpanel,
-                            Constraint.RelativeToParent((parent) => { return 0; }),
-                            Constraint.RelativeToParent((parent) => { return 0; }),
-                            Constraint.RelativeToParent((parent) => { return parent.Width * 0.5; }),
-                            Constraint.RelativeToParent((parent) => { return parent.Height; }));
-                    };
+                    GDmain.PanelButtonClicked += delegate { ShowPanel(); };
                     this.Children.Add(GDmain,
                         Constraint.RelativeToParent((parent) => { return 0; }),
                         Constraint.RelativeToParent((parent) => { return 0; }),
@@ -41,35 +67,126 @@ namespace share
                 }
                 {
                     GDpanel = new GridPanel();
-                    GDpanel.PanelButtonClicked +=async delegate (string option)
-                      {
-                          await App.Current.MainPage.DisplayAlert("", $"You clicked {option}", "OK");
-                          GDmain.IsEnabled = true;
-                          this.Children.Remove(GDpanel);
-                      };
+                    GDpanel.PanelButtonClicked += delegate () { HidePanel(); };
+                }
+                {
+                    cover = new AbsoluteLayout();
+                    cover.GestureRecognizers.Add(new TapGestureRecognizer
+                    {
+                        Command = new Command(() => HidePanel())
+                    });
                 }
             }
             GridMain GDmain;
             GridPanel GDpanel;
-            private partial class GridPanel:Grid
+            private partial class GridPanel : Grid
             {
-                public GridPanel()
+                private Button BTNphoto, BTNgoToHistory, BTNmoney, BTNvehicle, BTNcollection, BTNservice, BTNsetting;
+                private ScrollView SVmain;
+                private StackLayout SLmain;
+                private void InitializeViews()
                 {
                     this.VerticalOptions = this.HorizontalOptions = LayoutOptions.FillAndExpand;
-                    this.BackgroundColor = Color.FromRgb(1.0, 0.5, 0.0);
-                    int n = 5;
-                    for (int i = 0; i < n; i++) this.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Auto) });
-                    for(int i=0;i<n;i++)
+                    this.BackgroundColor = Color.FromRgb(1.0, 0.8, 0.5);
+                    this.RowDefinitions.Add(new RowDefinition { Height = new GridLength(150, GridUnitType.Absolute) });
+                    this.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
                     {
-                        Button btn = new Button();
-                        btn.Text = "Option " + (i + 1).ToString();
-                        btn.Clicked += delegate { OnPanelButtonClicked(btn.Text); };
-                        this.Children.Add(btn, 0, i);
+                        BTNphoto = new Button();
+                        BTNphoto.VerticalOptions = BTNphoto.HorizontalOptions = LayoutOptions.FillAndExpand;
+                        //BTNphoto.ContentLayout = new Button.ButtonContentLayout(Button.ButtonContentLayout.ImagePosition.Left, 5);
+                        BTNphoto.Image = "addUser.png";
+                        //BTNphoto.Source = "addUser.png";
+                        BTNphoto.Clicked += delegate
+                          {
+                              var newPage = new Personal_Page();
+                              Navigation.PushAsync(newPage);
+                              OnPanelButtonClicked();
+                          };
+                        this.Children.Add(BTNphoto, 0, 0);
+                    }
+                    {
+                        SVmain = new ScrollView();
+                        SVmain.VerticalOptions = SVmain.HorizontalOptions = LayoutOptions.FillAndExpand;
+                        {
+                            SLmain = new StackLayout();
+                            SLmain.VerticalOptions = SLmain.HorizontalOptions = LayoutOptions.FillAndExpand;
+                            {
+                                BTNgoToHistory = new Button();
+                                BTNgoToHistory.Text = "訂單";
+                                BTNgoToHistory.Clicked += delegate
+                                {
+                                    var newPage = new My_Purse_Page();
+                                    Navigation.PushAsync(newPage);
+                                    OnPanelButtonClicked();
+                                };
+                                SLmain.Children.Add(BTNgoToHistory);
+                            }
+                            {
+                                BTNmoney = new Button();
+                                BTNmoney.Text = "錢包";
+                                BTNmoney.Clicked += delegate
+                                {
+                                    var newPage = new My_Purse_Page();
+                                    Navigation.PushAsync(newPage);
+                                    OnPanelButtonClicked();
+                                };
+                                SLmain.Children.Add(BTNmoney);
+                            }
+                            {
+                                BTNvehicle = new Button();
+                                BTNvehicle.Text = "車輛";
+                                BTNvehicle.Clicked += delegate
+                                {
+                                    App.Current.MainPage.DisplayAlert("", "Not implement", "Back");
+                                    OnPanelButtonClicked();
+                                };
+                                SLmain.Children.Add(BTNvehicle);
+                            }
+                            {
+                                BTNcollection = new Button();
+                                BTNcollection.Text = "收藏";
+                                BTNcollection.Clicked += delegate
+                                {
+                                    var newPage = new My_Purse_Page();
+                                    Navigation.PushAsync(newPage);
+                                    OnPanelButtonClicked();
+                                };
+                                SLmain.Children.Add(BTNcollection);
+                            }
+                            {
+                                BTNservice = new Button();
+                                BTNservice.Text = "客服";
+                                BTNservice.Clicked += delegate
+                                {
+                                    var newPage = new My_Purse_Page();
+                                    Navigation.PushAsync(newPage);
+                                    OnPanelButtonClicked();
+                                };
+                                SLmain.Children.Add(BTNservice);
+                            }
+                            {
+                                BTNsetting = new Button();
+                                BTNsetting.Text = "設定";
+                                BTNsetting.Clicked += delegate
+                                {
+                                    var newPage = new Setting_Page();
+                                    Navigation.PushAsync(newPage);
+                                    OnPanelButtonClicked();
+                                };
+                                SLmain.Children.Add(BTNsetting);
+                            }
+                            SVmain.Content = SLmain;
+                        }
+                        this.Children.Add(SVmain, 0, 1);
                     }
                 }
-                public delegate void PanelButtonClickedEventHandler(string option);
+                public GridPanel()
+                {
+                    InitializeViews();
+                }
+                public delegate void PanelButtonClickedEventHandler();
                 public event PanelButtonClickedEventHandler PanelButtonClicked;
-                private void OnPanelButtonClicked(string option){ PanelButtonClicked?.Invoke(option); }
+                private void OnPanelButtonClicked() { PanelButtonClicked?.Invoke(); }
             }
             private partial class GridMain : Grid
             {
@@ -124,18 +241,40 @@ namespace share
                 }
                 private partial class GridMiddle:Grid
                 {
-                    Label LBtest;
+                    Xamarin.Forms.Maps.Map map;
                     public void SetCounty(string countyName)
                     {
-                        LBtest.Text = $"You're now at {countyName}";
+                        App.Current.MainPage.DisplayAlert("", $"You're now at {countyName}", "OK");
+                        //LBtest.Text = $"You're now at {countyName}";
                     }
                     public GridMiddle()
                     {
+                       //         map.
+                       //MapSpan.FromCenterAndRadius(
+                       //        new Position(37, -122), Distance.FromMiles(0.3)))
+                       //         {
+                       //             IsShowingUser = true,
+                       //             HeightRequest = 100,
+                       //             WidthRequest = 960,
+                       //             VerticalOptions = LayoutOptions.FillAndExpand
+                       //         };
                         this.VerticalOptions = this.HorizontalOptions = LayoutOptions.FillAndExpand;
+                        //{
+                        //    LBtest = new Label();
+                        //    LBtest.Text = "This is map";
+                        //    this.Children.Add(LBtest, 0, 0);
+                        //}
                         {
-                            LBtest = new Label();
-                            LBtest.Text = "This is map";
-                            this.Children.Add(LBtest, 0, 0);
+                            map=new Xamarin.Forms.Maps.Map(
+                                MapSpan.FromCenterAndRadius(
+                                        new Position(37, -122), Distance.FromMiles(0.3)))
+                            {
+                                IsShowingUser = true,
+                                HeightRequest = 100,
+                                WidthRequest = 960,
+                                VerticalOptions = LayoutOptions.FillAndExpand
+                            };
+                            this.Children.Add(map, 0, 0);
                         }
                     }
                 }

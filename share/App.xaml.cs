@@ -9,9 +9,8 @@ namespace share
 		{
 			InitializeComponent();
 
-			MainPage = new NavigationPage(new LogIn());
-            //MainPage = new NavigationPage(new Map());
-		}
+            MainPage = new NavigationPage(new LogIn());
+        }
 
 		protected override void OnStart()
 		{
