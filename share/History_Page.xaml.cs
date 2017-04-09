@@ -50,15 +50,8 @@ namespace share
 					new RowDefinition{ Height = new GridLength(20, GridUnitType.Absolute)},
 					new RowDefinition{ Height = new GridLength(5, GridUnitType.Absolute)},
 
-				},
-
-
+				}
 			};//grid
-
-
-
-
-
 		}
 	}
 }

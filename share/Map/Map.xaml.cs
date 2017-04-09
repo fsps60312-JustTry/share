@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 
 using Xamarin.Forms;
+using Xamarin.Forms.Maps;
 
 namespace share
 {
@@ -240,24 +241,41 @@ namespace share
                 }
                 private partial class GridMiddle:Grid
                 {
-                    Label LBtest;
-                    //Image IGtest;
+                    Xamarin.Forms.Maps.Map map;
                     public void SetCounty(string countyName)
                     {
-                        LBtest.Text = $"You're now at {countyName}";
+                        App.Current.MainPage.DisplayAlert("", $"You're now at {countyName}", "OK");
+                        //LBtest.Text = $"You're now at {countyName}";
                     }
                     public GridMiddle()
                     {
+                       //         map.
+                       //MapSpan.FromCenterAndRadius(
+                       //        new Position(37, -122), Distance.FromMiles(0.3)))
+                       //         {
+                       //             IsShowingUser = true,
+                       //             HeightRequest = 100,
+                       //             WidthRequest = 960,
+                       //             VerticalOptions = LayoutOptions.FillAndExpand
+                       //         };
                         this.VerticalOptions = this.HorizontalOptions = LayoutOptions.FillAndExpand;
-                        {
-                            LBtest = new Label();
-                            LBtest.Text = "This is map";
-                            this.Children.Add(LBtest, 0, 0);
-                        }
                         //{
-                        //    IGtest = new Image();
-                        //    IGtest.SetDynamicResource
+                        //    LBtest = new Label();
+                        //    LBtest.Text = "This is map";
+                        //    this.Children.Add(LBtest, 0, 0);
                         //}
+                        {
+                            map=new Xamarin.Forms.Maps.Map(
+                                MapSpan.FromCenterAndRadius(
+                                        new Position(37, -122), Distance.FromMiles(0.3)))
+                            {
+                                IsShowingUser = true,
+                                HeightRequest = 100,
+                                WidthRequest = 960,
+                                VerticalOptions = LayoutOptions.FillAndExpand
+                            };
+                            this.Children.Add(map, 0, 0);
+                        }
                     }
                 }
                 private partial class GridUp : Grid
