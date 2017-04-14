@@ -95,7 +95,6 @@ namespace share.PersonalPage
         }
         private string WriteFromData()
         {
-            Data data = new Data();
             DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(Data));
             MemoryStream stream = new MemoryStream();
             ser.WriteObject(stream, data);

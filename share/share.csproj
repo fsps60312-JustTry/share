@@ -31,6 +31,10 @@
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="sharePage.xaml" />
     <EmbeddedResource Include="LogIn.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -94,10 +98,16 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DataStorer.cs" />
     <Compile Include="Map\CountiesPage.xaml.cs">
       <DependentUpon>CountiesPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="PersonalPage\PersonalData.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="sharePage.xaml.cs">
       <DependentUpon>sharePage.xaml</DependentUpon>
     </Compile>
