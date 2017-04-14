@@ -75,5 +75,8 @@ C:\Users\Burney\Source\Repos\share\iOS\obj\iPhone\Release\share.iOS.csprojResolv
 C:\Users\Burney\Source\Repos\share\iOS\obj\iPhone\Release\share.iOS.csproj.share.iOS.exe.config
 C:\Users\Burney\Source\Repos\share\iOS\obj\iPhone\Release\share.iOS.exe
 C:\Users\Burney\Source\Repos\share\iOS\obj\iPhone\Release\share.iOS.pdb
+C:\Users\Burney\Source\Repos\share\iOS\bin\iPhone\Release\Xamarin.Forms.Maps.dll
+C:\Users\Burney\Source\Repos\share\iOS\bin\iPhone\Release\Xamarin.Forms.Maps.iOS.dll
+C:\Users\Burney\Source\Repos\share\iOS\bin\iPhone\Release\Xamarin.Forms.Maps.xml
 C:\Users\Burney\Source\Repos\share\iOS\obj\iPhone\Release\share.iOS.exe.mdb
 C:\Users\Burney\Source\Repos\share\iOS\bin\iPhone\Release\share.iOS.exe.mdb

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
+using System.Diagnostics;
 
 namespace share
 {
@@ -197,22 +198,22 @@ namespace share
                     this.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
                     this.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Auto) });
                     GDup = new GridUp();
-                    GDmiddle = new GridMiddle();
+                    GDmap = new GridMap();
                     GDdown = new GridDown();
                     {
                         GDup.PanelButtonClicked += delegate { OnPanelButtonClicked(); };
-                        GDup.ChangeMapCountyRequest += delegate (string countyName) { GDmiddle.SetCounty(countyName); };
+                        GDup.ChangeMapCountyRequest += delegate (string countyName) { GDmap.SetCounty(countyName); };
                         this.Children.Add(GDup, 0, 0);
                     }
                     {
-                        this.Children.Add(GDmiddle, 0, 1);
+                        this.Children.Add(GDmap, 0, 1);
                     }
                     {
                         this.Children.Add(GDdown, 0, 2);
                     }
                 }
                 GridUp GDup;
-                GridMiddle GDmiddle;
+                GridMap GDmap;
                 GridDown GDdown;
                 public delegate void PanelButtonClickedEventHandler();
                 public PanelButtonClickedEventHandler PanelButtonClicked;
@@ -239,33 +240,55 @@ namespace share
                         }
                     }
                 }
-                private partial class GridMiddle:Grid
+                private partial class GridMap:Grid
                 {
                     Xamarin.Forms.Maps.Map map;
+                    Dictionary<string, string> translation = new Dictionary<string, string>();
+                    Dictionary<string, MapSpan> countyMapSpan = new Dictionary<string, MapSpan>();
                     public void SetCounty(string countyName)
                     {
-                        App.Current.MainPage.DisplayAlert("", $"You're now at {countyName}", "OK");
+                        if(!translation.ContainsKey(countyName))
+                        {
+                            App.Current.MainPage.DisplayAlert("Error", $"Can't identify such county: {countyName}", "OK");
+                            return;
+                        }
+                        map.MoveToRegion(new MapSpan(new Position(25.033939, 121.564504), 0.5, 0.5));
+
+                        App.Current.MainPage.DisplayAlert("", $"You're now at {countyName}, {translation[countyName]}", "OK");
                         //LBtest.Text = $"You're now at {countyName}";
                     }
-                    public GridMiddle()
+                    public GridMap()
                     {
-                       //         map.
-                       //MapSpan.FromCenterAndRadius(
-                       //        new Position(37, -122), Distance.FromMiles(0.3)))
-                       //         {
-                       //             IsShowingUser = true,
-                       //             HeightRequest = 100,
-                       //             WidthRequest = 960,
-                       //             VerticalOptions = LayoutOptions.FillAndExpand
-                       //         };
-                        this.VerticalOptions = this.HorizontalOptions = LayoutOptions.FillAndExpand;
-                        //{
-                        //    LBtest = new Label();
-                        //    LBtest.Text = "This is map";
-                        //    this.Children.Add(LBtest, 0, 0);
-                        //}
+                        InitializeView();
+                        LoadData();
+                    }
+                    private async void LoadData()
+                    {
+                        //translation.Add("臺北", "Taipei");
+                        //translation.Add("高雄", "Kaohsiung");
+                        //await App.Current.MainPage.DisplayAlert("", Newtonsoft.Json.JsonConvert.SerializeObject(translation),"OK");
+                        //Debug.WriteLine("aa");
+                        translation = DataStorer<Dictionary<string, string>>.Parse(Properties.Resources.CountyNameTranslations);
+                        //Debug.WriteLine("bb");
                         {
-                            map=new Xamarin.Forms.Maps.Map(
+                            countyMapSpan.Add("Taipei", new MapSpan(new Position(25.033939, 121.564504), 0.5, 0.5));
+                            //Debug.WriteLine("cc");
+                            var ds = new DataStorer<Dictionary<string, MapSpan>>(countyMapSpan, "debug", "debug");
+                            Debug.WriteLine("dd");
+                            await ds.SaveAsync();
+                            //Debug.WriteLine("ee");
+                            await ds.LoadAsync();
+                            //Debug.WriteLine("ff");
+                            countyMapSpan = ds.data;
+                            //Debug.WriteLine("gg");
+                            await App.Current.MainPage.DisplayAlert("", ds.ToString(), "OK");
+                        }
+                    }
+                    private void InitializeView()
+                    {
+                        this.VerticalOptions = this.HorizontalOptions = LayoutOptions.FillAndExpand;
+                        {
+                            map = new Xamarin.Forms.Maps.Map(
                                 MapSpan.FromCenterAndRadius(
                                         new Position(37, -122), Distance.FromMiles(0.3)))
                             {
@@ -274,6 +297,8 @@ namespace share
                                 WidthRequest = 960,
                                 VerticalOptions = LayoutOptions.FillAndExpand
                             };
+                            //new Pin { }
+                            map.MoveToRegion(new MapSpan(new Position(25.033939, 121.564504), 0.5, 0.5));
                             this.Children.Add(map, 0, 0);
                         }
                     }
